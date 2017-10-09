@@ -1,0 +1,55 @@
+
+% DOCUMENT
+\section{Estudio de la Situación Actual}
+\par Como paso previo al desarrollo de la solución, es conveniente realizar un análisis del sistema global. Para llevarlo a cabo, se ha procedido a dividir el sistema en los distintos subsistemas que lo componen, así como a la consulta de las fuentes primarias y secundarias utilizadas para elaborar una valoración inicial. A continuación, se ha realizado un diagnóstico individual de cada uno de los subsistemas analizados, con el fin de tener constancia de los problemas que puedan llegar a surgir durante la implantación del sistema.
+
+\subsection{Valoración del Estudio de la Situación Actual}
+\par Para realizar una correcta valoración del sistema de software, este se ha dividido en seis subsistemas, que coinciden con los seis mecanismos integrados que debe proporcionar el sistema. La razón principal para realizar esta subdivisión es que se ha considerado que los seis sistemas, si bien  forman parte de la solución integrada en el vehículo, son mecanismos aislados que se ofrecen en conjunto. Esto ha permitido concretar más en la estimación de los problemas que puedan surgir a la hora de la implementación. Esta valoración ha sido realizada en conjunto por el Jefe de Proyecto y el Analista Jefe, que han realizado un estudio en profundidad y han sido los responsables de llevar a cabo reuniones con distintos perfiles de los usuarios finales que serán los beneficiarios del sistema. Los subsistemas analizados son los siguientes:
+
+\begin{itemize}[-]
+\item \textbf{Control del punto ciego}
+\par Actualmente, y tal y como están diseñados los vehículos y los espejos retrovisores, hay una zona sobre la que el conductor de un vehículo no tiene ninguna visibilidad. De los usuarios entrevistados, todos han constatado la existencia de dicha zona, y que un sistema que avisara al conductor de que hay un vehículo allí, sería de gran utilidad.
+
+\item \textbf{Aviso de cambio de carril}
+\par En algunas autopistas existen bandas sonoras colocadas en la línea que delimita la separación del carril con el arcen. Estas bandas sonoras no se suelen encontrar en las carreteras secundarias ni en la separación entre el carril de un sentido y el del sentido contrario.  Por ello, un sistema que detecte cuando el vehículo se está aproximando a la línea de separación y avise al conductor se espera que sea bien acogido por gran parte de los usuarios.
+
+\item \textbf{Alerta de velocidad}
+\par En la mayoría de los accidentes se diagnostica como un factor clave la velocidad excesiva de los vehículos. En muchas ocasiones, esta velocidad excesiva es consecuencia de pérdidas de atención por parte de los conductores, que no son conscientes del límite de velocidad establecido para el tramo en el que circulan. Según los usuarios entrevistados, un sistema que reconociese las señales de tráfico, las mantuviese en la pantalla del vehículo y avisase al conductor si superase ese límite, sería de gran ayuda. Sin embargo, los entrevistados han recalcado que el software debe alertar al conductor, nunca reducir la velocidad, por motivos de seguridad.
+
+\item \textbf{Alerta por pérdida de atención}
+\par Junto con el exceso de velocidad, la pérdida de atención de los conductores al volante es un factor muy frecuente en los accidentes de tráfico. La fatiga al volante es un hecho muy común entre los conductores de largas distancias. Es por ello que la de idea de un sistema que detecte cuando se produce una pérdida de atención y compruebe si el conductor se está quedando dormido, avisándole y parando el vehículo progresivamente, ha sido muy bien acogida entre los usuarios entrevistados.
+
+\item \textbf{Llamada automática de emergencia}
+\par Cuando se produce un accidente de gravedad, los ocupantes de los vehículos involucrados frecuentemente se encuentran inconscientes o no son capaces de moverse. Los minutos posteriores al accidente son críticos para la supervivencia de los ocupantes del vehículo, por lo que un sistema que realice una llamada de emergencia y envíe la ubicación exacta del vehículo a las autoridades puede ser un factor clave. La mayoría de los usuarios han reaccionado muy bien a esta propuesta, sin embargo, algunos se han preocupado por la privacidad, ya que el vehículo podría estar emitiendo constantemente su ubicación sin que el conductor se percatase.
+
+\item \textbf{Alerta de precolisión}
+\par La mayoría de los accidentes se producen por una colisión entre dos vehículos o con un obstáculo. La idea de un sistema que reduzca la velocidad y prepare el vehículo para una colisión inmediata ha sido bien acogida por todos los usuarios potenciales.
+
+
+\end{itemize}
+
+\subsection{Realización del Diagnostico de la Situación Actual}
+\par Una vez estudiada la situación actual, se puede concluir que en este proyecto, tanto el hardware como el software van a ir de la mano, ya que los vehículos de la actualidad no cuentan con este hardware preparado de fábrica. A continuación se detallan las conclusiones acerca de cómo resolver los problemas y deficiencias de cada uno de los principales subsistemas, así como las mejoras que el sistema introducirá en los vehículos actuales:
+
+\begin{itemize}[-]
+\item \textbf{Control del punto ciego}
+\par Este problema requerirá de la instalación en el vehículo de hardware capaz de identificar cuando un objeto se encuentra en una zona determinada por el software, que recibirá una señal en caso afirmativo y procederá a notificárselo al conductor.
+
+\item \textbf{Aviso de cambio de carril}
+\par Será necesario un hardware de reconocimiento de formas y colores controlado por el sistema de software y que notifique al conductor cuando el vehículo se encuentra sobrepasando la delimitación del carril en el que se encontraba anteriormente.
+
+\item \textbf{Alerta de velocidad}
+\par Para implementar esta funcionalidad, podremos valernos de el hardware de reconocimiento de formas y colores, que junto con un software de aprendizaje automático será capaz de reconocer las señales de tráfico, mostrárselas al conductor y establecer un aviso automático en el vehículo si se supera la velocidad reglamentaria.
+
+\item \textbf{Alerta por pérdida de atención}
+\par Este subsistema es uno de los más complicados de implementar, ya que no responde a un hecho claro hasta que ya es demasiado tarde. Por ello las mediciones se deben considerar de una forma subjetiva y el diagnóstico puede variar en función de la persona. Según los primeros bocetos, serán necesarios dos dispositivos de hardware que permitan medir la presión al volante y la posición de los párpados del conductor, aunque se podrían combinar con más sistemas, como por ejemplo el de cambio de carril.
+
+\item \textbf{Llamada automática de emergencia}
+\par Esta funcionalidad requerirá incorporar en el vehículo un testigo con una alta probabilidad de acierto, que permita al software saber en qué momento se ha producido el accidente. Por otro lado, también será necesario un dispositivo GPS para comunicar a las autoridades pertinentes la localización exacta del vehículo , así como un dispositivo que pueda emitir llamadas de emergencia.
+
+\item \textbf{Alerta de precolisión}
+\par Para este realizar este subsistema será necesario tener un control de la distancia a la que se encuentra un objeto frontalmente. Este dato será recibido por el software, que conociendo la velocidad y la distancia de frenada del vehículo notificará al conductor en caso de peligro. Si el accidente es inevitable, el software tomará el control del vehículo y lo preparará para el impacto.
+
+\end{itemize}
+
+\par Tras analizar en detalle cada uno de los subsistemas individualmente y llevar a cabo su diagnóstico, se puede concluir que todos las funcionalidades planteadas son, con la tecnología actual, posibles de implementar y materializar.

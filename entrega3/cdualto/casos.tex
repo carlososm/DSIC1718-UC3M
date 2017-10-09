@@ -1,0 +1,210 @@
+\section{Casos de uso de alto nivel}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}}
+\multicolumn{2}{c}{\textbf{CDU-01} } \\ \hline \hline
+Nombre & Activar notificación de punto ciego en el retrovisor \\ \hline
+Actores & Objeto \\ \hline
+Tipo & Primario y real \\ \hline
+Descripción & Cuando haya un objeto en el punto ciego, se activará una notificación luminosa en el retrovisor que se encuentre en el mismo lado del vehículo que el objeto.  \\ \hline
+Precondiciones &  \tabitem Objeto situado en el punto ciego. \\ \hline
+Postcondiciones & \tabitem Se encenderá una notificación luminosa en el retrovisor del lado del vehículo en el que se encuentre el objeto. \\ \hline
+\end{tabular}
+\caption{Caso de uso de alto nivel 01}
+\label{tab:CDU-01}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}}
+\multicolumn{2}{c}{\textbf{CDU-02} } \\ \hline \hline
+Nombre & Activar notificación sonora por punto ciego
+ \\ \hline
+Actores & Conductor \\ \hline
+Tipo & Primario y esencial \\ \hline
+Descripción & Cuando el sistema detecte que hay un objeto en el punto ciego del vehículo, y el conductor tenga el intermitente activado, se activará una notificación sonora. \\ \hline
+Precondiciones &  \tabitem El intermitente tiene que estar activo. \newline \tabitem Hay un vehículo en el punto ciego del vehículo \\ \hline
+Postcondiciones & \tabitem Se encenderá una notificación luminosa en el retrovisor del lado del vehículo en el que se encuentre el objeto. \\ \hline
+\end{tabular}
+\caption{Caso de uso de alto nivel 02}
+\label{tab:CDU-02}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}}
+\multicolumn{2}{c}{\textbf{CDU-03} } \\ \hline \hline
+Nombre & Hacer vibrar el volante \\ \hline
+Actores & Líneas de carril \\ \hline
+Tipo & Primario y esencial \\ \hline
+Descripción & Cuando el vehículo detecte que existe una desviación superior al 10\% entre la trayectoria del carril y la que va a seguir el vehículo (en función de la velocidad y el ángulo del volante), hará vibrar el volante para avisar al conductor.  \\ \hline
+Precondiciones &  \tabitem Existe una desviación superior al 10\% entre la trayectoria del carril y la que va a seguir el vehículo. \\ \hline
+Postcondiciones & \tabitem El sistema hará vibrar el volante. \\ \hline
+\end{tabular}
+\caption{Caso de uso de alto nivel 03}
+\label{tab:CDU-03}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}}
+\multicolumn{2}{c}{\textbf{CDU-04} } \\ \hline \hline
+Nombre & Corregir el volante \\ \hline
+Actores & Líneas de carril \\ \hline
+Tipo & Primario y real \\ \hline
+Descripción & El sistema gira el volante si detecta una desviación de la trayectoria del vehículo. \\ \hline
+Precondiciones &  \tabitem El vehículo ha detectado una desviación de la trayectoria mayor del 15\% con respecto a la trayectoria calculada. \\ \hline
+Postcondiciones & \tabitem Se corrige la dirección del vehículo mediante un giro del volante de un máximo de 5 grados. \\ \hline
+\end{tabular}
+\caption{Caso de uso de alto nivel 04}
+\label{tab:CDU-04}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}}
+\multicolumn{2}{c}{\textbf{CDU-05} } \\ \hline \hline
+Nombre & Activar notificación por velocidad máxima \\ \hline
+Actores & GPS, Señal \\ \hline
+Tipo & Primario y real \\ \hline
+Descripción & El sistema indica en el panel de abordo la velocidad máxima establecida para esa vía. \\ \hline
+Precondiciones &  \tabitem El vehículo ha detectado cual es la velocidad máxima a la que se puede circular por la vía actual. \\ \hline
+Postcondiciones & \tabitem Se muestra en el panel la velocidad máxima. \\ \hline
+\end{tabular}
+\caption{Caso de uso de alto nivel 05}
+\label{tab:CDU-05}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}}
+\multicolumn{2}{c}{\textbf{CDU-06} } \\ \hline \hline
+Nombre & No superar el límite de velocidad \\ \hline
+Actores & Reloj \\ \hline
+Tipo & Primario y esencial \\ \hline
+Descripción & Cuando la funcionalidad de no superar el límite de velocidad esté activada, el sistema dejará de acelerar cuando se alcance la velocidad máxima indicada por las señales de la vía o por el GPS. \\ \hline
+Precondiciones &  \tabitem El sistema tomará la velocidad máxima indicada por la señal o por el GPS. \\ \hline
+Postcondiciones & \tabitem El sistema hará que cuando el vehículo alcance la velocidad determinada por las señales y el gps, este, no acelere. \\ \hline
+\end{tabular}
+\caption{Caso de uso de alto nivel 06}
+\label{tab:CDU-06}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}}
+\multicolumn{2}{c}{\textbf{CDU-07} } \\ \hline \hline
+Nombre & Desactivar notificaciones \\ \hline
+Actores & Conductor \\ \hline
+Tipo & Primario y esencial \\ \hline
+Descripción & El usuario puede desactivar las notificaciones de alerta de velocidad en caso de que lo desee. \\ \hline
+Precondiciones &  \tabitem El sistema debe estar activado. \\ \hline
+Postcondiciones & \tabitem Se avisará al conductor de que el sistema ha sido desactivado \\ \hline
+\end{tabular}
+\caption{Caso de uso de alto nivel 07}
+\label{tab:CDU-07}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}}
+\multicolumn{2}{c}{\textbf{CDU-08} } \\ \hline \hline
+Nombre & Activar notificación de descanso \\ \hline
+Actores & Conductor \\ \hline
+Tipo & Primario y esencial \\ \hline
+Descripción & Cuando el vehículo aplique el algoritmo para detectar la posición de los párpados del conductor y mida la presión que hace este sobre el volante, y estos valores indiquen que el conductor está distraído, a punto de dormirse, o dormido, se activará una señal sonora durante 3 segundos. \\ \hline
+Precondiciones &  \tabitem La presión con el volante no es la suficiente. \newline \tabitem La posición de los párpados indican que el conductor está cansado o dormido. \\ \hline
+Postcondiciones & \tabitem Se activará la notificación sonora durante 3 segundos para avisar al conductor. \\ \hline
+\end{tabular}
+\caption{Caso de uso de alto nivel 08}
+\label{tab:CDU-08}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}}
+\multicolumn{2}{c}{\textbf{CDU-09} } \\ \hline \hline
+Nombre & Detener el vehículo \\ \hline
+Actores & Objeto, Conductor \\ \hline
+Tipo & Primario y real \\ \hline
+Descripción & El sistema detendrá el vehículo si el conductor ha perdido la atención o si se detecta una posible colisión y el conductor pisa el freno. \\ \hline
+Precondiciones &  \tabitem El conductor no recupera la atención tras más de tres segundos de emisión de señales acústicas. \newline \tabitem Se ha recibido una notificación por colisión y el conductor ha pisado el freno. \\ \hline
+Postcondiciones & \tabitem El sistema detiene el vehículo. \\ \hline
+\end{tabular}
+\caption{Caso de uso de alto nivel 09}
+\label{tab:CDU-09}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}}
+\multicolumn{2}{c}{\textbf{CDU-10} } \\ \hline \hline
+Nombre & Llamada de emergencia \\ \hline
+Actores & Reloj \\ \hline
+Tipo & Primario y esencial \\ \hline
+Descripción & En caso de accidente el sistema enviará una notificación al centro de emergencias. Esta notificación tendrá el formato estándar europeo. El cancelar la llamada de emergencia si se encuentra consciente y considera que no es necesario. \\ \hline
+Precondiciones &  \tabitem Que se produzca un accidente \\ \hline
+Postcondiciones &  \\ \hline
+\end{tabular}
+\caption{Caso de uso de alto nivel 10}
+\label{tab:CDU-10}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}}
+\multicolumn{2}{c}{\textbf{CDU-11} } \\ \hline \hline
+Nombre & Activar notificación por riesgo de colisión \\ \hline
+Actores & Objeto \\ \hline
+Tipo & Primario y real \\ \hline
+Descripción & El sistema activará una notificación por riesgo de colisión cuando existe una posibilidad del 50\% de que se colisione con otro objeto. \\ \hline
+Precondiciones &  \tabitem El sistema detecta una colisión con una probabilidad del 50\% \\ \hline
+Postcondiciones &  \tabitem El sistema emite una notificación. \\ \hline
+\end{tabular}
+\caption{Caso de uso de alto nivel 11}
+\label{tab:CDU-11}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}}
+\multicolumn{2}{c}{\textbf{CDU-12} } \\ \hline \hline
+Nombre & Preparar vehículo para impacto \\ \hline
+Actores & Objeto \\ \hline
+Tipo & Primario y real \\ \hline
+Descripción & El sistema reducirá la velocidad del vehículo si detecta una posible colisión. \\ \hline
+Precondiciones &  \tabitem El sistema detecta una colisión inminente (la probabilidad de evitar un obstáculo es menor del 70\%) \\ \hline
+Postcondiciones &  \tabitem El sistema reduce la velocidad del vehículo. \newline \tabitem El sistema ajusta los cinturones de seguridad \newline \tabitem El sistema fija los asientos \newline \tabitem El sistema cierra las ventanillas \newline \tabitem Si se evita el accidente se deshacen las acciones. \\ \hline
+\end{tabular}
+\caption{Caso de uso de alto nivel 12}
+\label{tab:CDU-12}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}}
+\multicolumn{2}{c}{\textbf{CDU-13} } \\ \hline \hline
+Nombre & Reducir velocidad \\ \hline
+Actores & Objeto \\ \hline
+Tipo & Primario y real \\ \hline
+Descripción & El sistema reducirá la velocidad del vehículo si detecta una posible colisión. \\ \hline
+Precondiciones &  \tabitem El sistema detecta una colisión inminente (la probabilidad de evitar un obstáculo es menor del 70\%) \\ \hline
+Postcondiciones &  \tabitem El sistema reduce la velocidad del vehículo. \\ \hline
+\end{tabular}
+\caption{Caso de uso de alto nivel 13}
+\label{tab:CDU-13}
+\end{center}
+\end{table}

@@ -1,0 +1,39 @@
+\section{Características de la priorización}
+
+\par Con el fin de ordenar los casos de uso según su prioridad, es necesario identificar las características que hacen que un caso de uso tenga prioridad alta, así como la ponderación que tendrá la característica en el cálculo de la puntuación final:
+
+\begin{enumerate}
+
+\item \textbf{Impacto significativo en el diseño de la arquitectura:} un proyecto con una sólida estructura de clases, conectividad entre los elementos independientes y que sea escalable a cualquier nivel será adaptable a los cambios que puedan surgir. Por otro lado, el sistema estará procesando constantemente una cantidad de datos muy elevada, por lo que es de crucial importancia realizar un correcto diseño arquitectónico. Será por tanto uno de los factores más importantes y le asignaremos una ponderación del 30\%.
+
+\item \textbf{Se obtiene una mejor comprensión del diseño:} la implantación parcial de algunos casos de uso puede suponer una mejora significativa a la hora de comprender mejor el sistema. Esto es debido a que, tal y como se ha expuesto en el Estudio de Viabilidad del Sistema, el sistema global no es más que un conjunto de distintos subsistemas que pueden funcionar independientemente. En este proyecto, este factor carece de mucho sentido, ya que el sistema global es una integración de funcionalidades independientes. Sin embargo, debido a que es una integración, si que se puede obtener una ligera mejor comprensión si se divide en sus funcionalidades, por lo que se le ha asignado una ponderación del 5\%.
+
+\item \textbf{Incluye funciones complejas:} el sistema cuenta con algoritmos complejos que pueden requerir demasiado tiempo de implementación y desarrollo. Aquellos casos de uso que requieran una implementación de algoritmos complejos se realizarán en primer lugar, para poder concluir el proyecto con las funcionalidades más sencillas. Por ello, se ha decidido ponderar este factor con un 15\%.
+
+\item \textbf{Implica bien un trabajo de investigación significante, o bien el uso de una tecnología nueva o arriesgada:} el sistema deberá interactuar constantemente con diversos dispositivos hardware, tales como sensores de proximidad, cámaras, sensores de presión al volante, etc. Para llevar a cabo una correcta implementación, será necesario hacer un estudio previo de estos sistemas externos y como conectarlos e integrarlos en un sistema único. Esta integración es muy importante, ya que si el sistema llegase a fallar podría resultar en una pérdida de vidas humanas. Esta investigación e integración se llevará a cabo en primer lugar, para poder concluir el proyecto con las funcionalidades más sencillas. Por ello, se ha decidido ponderar este factor con un 30\%.
+
+\item \textbf{Representa un proceso de gran importancia en la línea de negocio:} en la industria del automóvil, un vehículo que disponga de un sistema de seguridad avanzado como el que se desea desarrollar para CARSAFETY puede suponer un alto impacto que desvie a los consumidores hacia aquellos productos que lo incorporen. Es por ello, que se implementarán antes aquellas funcionalidades que puedan aportar un mayor valor añadido al producto, ponderando este factor con un 10\%.
+
+\item \textbf{Supone directamente un aumento de beneficios o una disminución de costes:} la inversión en este proyecto está orientada a obtener un beneficio social más que económico, es decir, el beneficio de la seguridad de los ciudadanos. Sin embargo, la empresa que produzca automóviles con este sistema integrado podrá obtener unos mayores beneficios que sus competidores por la diferenciación de su producto. Por lo tanto, asignaremos una ponderación del 10\% para completar la lista de factores.
+\end{enumerate}
+
+\par Una vez analizadas las características principales, se ha procedido a asignar a cada una una de ellas una ponderación, lo que permitirá evaluar los casos de uso.
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{11cm} r p{3,5cm}}
+\textbf{Característica} & \textbf{Ponderación} \\ \hline \hline
+1. Impacto significativo en el diseño de la arquitectura & 0,3 \\ \hline
+2. Mejor comprensión del diseño & 0,05 \\ \hline
+3. Incluye funciones complejas & 0,15 \\ \hline
+4. Implica trabajo de investigación o tecnología nueva &  0,3 \\ \hline
+5. Representa un proceso de gran importancia en la línea de negocio & 0,10 \\ \hline
+6. Supone directamente un aumento de beneficios o disminución de costes & 0,10 \\ \hline \hline
+\textbf{Total} & \textbf{1} \\
+\end{tabular}
+\caption{Ponderación de las caracteristicas para los casos de uso}
+\label{tab:priorizacion}
+\end{center}
+\end{table}
+
+\newpage

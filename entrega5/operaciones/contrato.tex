@@ -1,0 +1,828 @@
+\chapter{Contratos de operación}
+
+\par En este apartado se formalizarán los contratos de operaciones del sistema, los cuales describen el comportamiento esperado del sistema en cada operación del diagrama de secuencia. El formato que se seguirá para describirlos es el que se especifica en la metodología Craig-Larman:
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}} \hline \hline
+\textbf{Identificador} & Parámetro identificativo del contrato de operaciones \\ \hline
+\textbf{Método} & Método al que hace referencia el contrato de operación \\ \hline
+\textbf{Responsabilidades} & Descripción de las responsabilidades de la operación \\ \hline
+\textbf{Referencias cruzadas} & Números de referencia a otras partes del documento que estén relacionados con la operación \\ \hline
+\textbf{Pre-condiciones} & Estado del sistema antes de proceder a la ejecución de la operación \\ \hline
+\textbf{Post-condiciones} & Estado del sistema después de completar la operación  \\ \hline
+\end{tabular}
+\caption{Formato de las tablas para los contratos de operacion.}
+\label{tab:formatoCO}
+\end{center}
+\end{table}
+
+\par A continuación, se procede a explicar los contratos de operación para cada diagrama de secuencia:
+
+\begin{enumerate}
+\item Diagrama de secuencia correspondiente al caso de uso: \textbf{activar notificación por velocidad máxima para actor Señal}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}} \hline \hline
+\textbf{Identificador} & CO-01 \\ \hline
+\textbf{Método} & arrancarVehículo() \\ \hline
+\textbf{Responsabilidades} & Método que simula el arranque del vehículo \\ \hline
+\textbf{Referencias cruzadas} & CDU-05: Activar notificación por velocidad máxima para actor Señal  \\ \hline
+\textbf{Pre-condiciones} & \tabitem El simulador del vehículo no está arrancado \\ \hline
+\textbf{Post-condiciones} & \tabitem El simulador del vehículo está arrancado   \\ \hline
+\end{tabular}
+\caption{CO-01.}
+\label{tab:CO-01}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}} \hline \hline
+\textbf{Identificador} & CO-02 \\ \hline
+\textbf{Método} & activar() \\ \hline
+\textbf{Responsabilidades} & Este método es el encargado de inicializar el sistema encargado de generar alertas de velocidad cuando se supere la velocidad máxima permitida por esa vía.  \\ \hline
+\textbf{Referencias cruzadas} & CDU-05: Activar notificación por velocidad máxima para actor Señal  \\ \hline
+\textbf{Pre-condiciones} & \tabitem El simulador del vehículo está arrancado \\ \hline
+\textbf{Post-condiciones} & \tabitem El sistema de alerta de velocidad está activado    \\ \hline
+\end{tabular}
+\caption{CO-02.}
+\label{tab:CO-02}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}} \hline \hline
+\textbf{Identificador} & CO-03 \\ \hline
+\textbf{Método} & activar() \\ \hline
+\textbf{Responsabilidades} & Este método es el encargado de activar el sensor encargado de detectar las señales de tráfico  \\ \hline
+\textbf{Referencias cruzadas} & CDU-05: Activar notificación por velocidad máxima para actor Señal  \\ \hline
+\textbf{Pre-condiciones} & \tabitem El sistema de alerta de velocidad está activado \\ \hline
+\textbf{Post-condiciones} & \tabitem El sensor de sistema de alerta de velocidad está activado    \\ \hline
+\end{tabular}
+\caption{CO-03.}
+\label{tab:CO-03}
+\end{center}
+\end{table}
+
+
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}} \hline \hline
+\textbf{Identificador} & CO-04 \\ \hline
+\textbf{Método} & leer() \\ \hline
+\textbf{Responsabilidades} & Este método es el encargado de identificar todas las señales que vayan apareciendo por la carretera por la que circula el vehículo  \\ \hline
+\textbf{Referencias cruzadas} & CDU-05: Activar notificación por velocidad máxima para actor Señal  \\ \hline
+\textbf{Pre-condiciones} & \tabitem El sistema de alerta de velocidad está activado \\
+                          & \tabitem El sensor de sistema de alerta de velocidad está activado \\ \hline
+\textbf{Post-condiciones} & \tabitem -    \\ \hline
+\end{tabular}
+\caption{CO-04.}
+\label{tab:CO-04}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}} \hline \hline
+\textbf{Identificador} & CO-05 \\ \hline
+\textbf{Método} & getSeñal() \\ \hline
+\textbf{Responsabilidades} & Este método utiliza el sensor incorporado en el vehículo para comprobar si existe alguna señal en la vía. \\ \hline
+\textbf{Referencias cruzadas} & CDU-05: Activar notificación por velocidad máxima para actor Señal  \\ \hline
+\textbf{Pre-condiciones} & \tabitem El sistema de alerta de velocidad debe estar activado \\
+                        & \tabitem El sensor tiene que poder captar las señales que vayan apareciendo \\ \hline
+\textbf{Post-condiciones} & \tabitem El sistema ha recibido una nueva señal \\ \hline
+\end{tabular}
+\caption{CO-05.}
+\label{CO-05.}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}} \hline \hline
+\textbf{Identificador} & CO-06 \\ \hline
+\textbf{Método} & createSeñal() \\ \hline
+\textbf{Responsabilidades} &
+Este método es el encargado de crear en el sistema una señas con las mismas características (formato, tipo prioridad y velocidad) que la señal recibida por el sensor. \\ \hline
+\textbf{Referencias cruzadas} & CDU-05: Activar notificación por velocidad máxima para actor Señal  \\ \hline
+\textbf{Pre-condiciones} & \tabitem El sistema de alerta de velocidad debe estar activado \\
+                        & \tabitem Se ha recibido una nueva imágen del sensor \\ \hline
+\textbf{Post-condiciones} & \tabitem Se ha creado una nueva señal con las características de la misma  \\ \hline
+\end{tabular}
+\caption{CO-06.}
+\label{CO-06.}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}} \hline \hline
+\textbf{Identificador} & CO-07 \\ \hline
+\textbf{Método} & setVelocidadPermitidaActual() \\ \hline
+\textbf{Responsabilidades} & Este método es el encargado de establecer cuál es la velocidad máxima permitida según la señal que se acaba de crear.
+ \\ \hline
+\textbf{Referencias cruzadas} & CDU-05: Activar notificación por velocidad máxima para actor Señal  \\ \hline
+\textbf{Pre-condiciones} & \tabitem El sistema de alerta de velocidad debe estar activado \\
+                        & \tabitem Tiene que haber una señal creada  \\ \hline
+\textbf{Post-condiciones} & \tabitem El sistema tiene consciencia de la velocidad máxima a la que se puede circular por la vía en la que se encuentra el vehículo   \\ \hline
+\end{tabular}
+\caption{CO-07.}
+\label{CO-07.}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}} \hline \hline
+\textbf{Identificador} & CO-08 \\ \hline
+\textbf{Método} & utilizarVelocidadGPS() \\ \hline
+\textbf{Responsabilidades} & Este método es el encargado de establecer como velocidad máxima de circulación la que diga el GPS teniendo en cuenta el tipo de vía. Se utilizará cuando no sea posible establecer la velocidad máxima de circulación a través de las señales de tráfico.
+ \\ \hline
+\textbf{Referencias cruzadas} & CDU-05: Activar notificación por velocidad máxima para actor Señal  \\ \hline
+\textbf{Pre-condiciones} & \tabitem El sistema de alerta de velocidad debe estar activado \\
+                        & \tabitem El GPS tiene que tener la velocidad a la que se puede circular por esa vía  \\ \hline
+\textbf{Post-condiciones} & \tabitem La velocidad máxima de circulación es la establecida por el GPS     \\ \hline
+\end{tabular}
+\caption{CO-08.}
+\label{CO-08.}
+\end{center}
+\end{table}
+
+
+
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}} \hline \hline
+\textbf{Identificador} & CO-09 \\ \hline
+\textbf{Método} & compararVelocidades() \\ \hline
+\textbf{Responsabilidades} & Este método es el encargado de comparar la velocidad máxima a la que se puede circular por la vía, y la velocidad a la que está circulando el vehículo
+ \\ \hline
+\textbf{Referencias cruzadas} & CDU-05: Activar notificación por velocidad máxima para actor Señal  \\ \hline
+\textbf{Pre-condiciones} & \tabitem El sistema de alerta de velocidad debe estar activado \\
+                        & \tabitem Tiene que haber una señal creada  \\
+                        & \tabitem El vehículo tiene que estar arrancado  \\ \hline
+\textbf{Post-condiciones} & \\ \hline
+\end{tabular}
+\caption{CO-10.}
+\label{CO-10.}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}} \hline \hline
+\textbf{Identificador} & CO-11 \\ \hline
+\textbf{Método} & activarNotificación() \\ \hline
+\textbf{Responsabilidades} & Este método es el encargado de mandar una notificación al conductor en el caso que se esté circulando a una velocidad superior a la permitida
+ \\ \hline
+\textbf{Referencias cruzadas} & CDU-05: Activar notificación por velocidad máxima para actor Señal  \\ \hline
+\textbf{Pre-condiciones} & \tabitem El sistema de alerta de velocidad debe estar activado \\
+                        & \tabitem Tiene que haber una señal creada  \\
+                        & \tabitem El vehículo tiene que estar circulando  \\ \hline
+\textbf{Post-condiciones} & \tabitem El sistema recibe una notificación \\ \hline
+\end{tabular}
+\caption{CO-11.}
+\label{CO-11.}
+\end{center}
+\end{table}
+
+\item Diagrama de secuencia correspondiente al caso de uso: \textbf{detener vehículo}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}} \hline \hline
+\textbf{Identificador} & CO-12 \\ \hline
+\textbf{Método} & arrancarVehículo() \\ \hline
+\textbf{Responsabilidades} & Método que simula el arranque del vehículo \\ \hline
+\textbf{Referencias cruzadas} & CDU-09: detener vehículo  \\ \hline
+\textbf{Pre-condiciones} & \tabitem El simulador del vehículo no está arrancado \\ \hline
+\textbf{Post-condiciones} & \tabitem El simulador del vehículo está arrancado   \\ \hline
+\end{tabular}
+\caption{CO-12.}
+\label{tab:CO-12.}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}} \hline \hline
+\textbf{Identificador} & CO-13 \\ \hline
+\textbf{Método} & iniciarSistemaDeteccionFatiga() \\ \hline
+\textbf{Responsabilidades} & Este método es el encargado de inicializar el sistema de pérdida de atención del conductor \\ \hline
+\textbf{Referencias cruzadas} & CDU-09: detener vehículo  \\ \hline
+\textbf{Pre-condiciones} & \tabitem El simulador del vehículo está arrancado \\ \hline
+\textbf{Post-condiciones} & \tabitem El sistema de alerta por pérdida de atención está activado    \\ \hline
+\end{tabular}
+\caption{CO-13.}
+\label{tab:CO-13.}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}} \hline \hline
+\textbf{Identificador} & CO-14 \\ \hline
+\textbf{Método} & getFace() \\ \hline
+\textbf{Responsabilidades} & Método que recoge toda la información facial del conductor necesaria para determinar si está en buenas condiciones para conducir  \\ \hline
+\textbf{Referencias cruzadas} & CDU-09: detener vehículo  \\ \hline
+\textbf{Pre-condiciones} & \tabitem El simulador del vehículo está arrancado \\
+                          & \tabitem El sistema de pérdida de atención tiene que estar activado \\ \hline
+\textbf{Post-condiciones} & \tabitem El sistema dispone de nuevos datos para analizar el nivel de fatiga del conductor   \\ \hline
+\end{tabular}
+\caption{CO-14.}
+\label{tab:CO-14.}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}} \hline \hline
+\textbf{Identificador} & CO-15 \\ \hline
+\textbf{Método} & getTrayectoria () \\ \hline
+\textbf{Responsabilidades} & Método que determina la trayectoria que sigue el vehículo  \\ \hline
+\textbf{Referencias cruzadas} & CDU-09: detener vehículo  \\ \hline
+\textbf{Pre-condiciones} & \tabitem El sistema de pérdida de atención tiene que estar activado \\
+                          & \tabitem El vehículo tiene que estar en circulación \\ \hline
+\textbf{Post-condiciones} & \tabitem El sistema dispone de nuevos datos para analizar la trayectoria del vehículo    \\ \hline
+\end{tabular}
+\caption{CO-15.}
+\label{tab:CO-15.}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}} \hline \hline
+\textbf{Identificador} & CO-16 \\ \hline
+\textbf{Método} & getPosicionVolante()\\ \hline
+\textbf{Responsabilidades} & Método encargado de determinar la posición del volante cuando el vehículo se encuentre circulando  \\ \hline
+\textbf{Referencias cruzadas} & CDU-09: detener vehículo  \\ \hline
+\textbf{Pre-condiciones} & \tabitem El sistema de pérdida de atención tiene que estar activado \\
+                          & \tabitem El vehículo tiene que estar en circulación \\ \hline
+\textbf{Post-condiciones} & \tabitem  El sistema dispone de nuevos datos para analizar la posición del volante del vehículo  \\ \hline
+\end{tabular}
+\caption{CO-16.}
+\label{tab:CO-16.}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}} \hline \hline
+\textbf{Identificador} & CO-17 \\ \hline
+\textbf{Método} & analizarFatiga()\\ \hline
+\textbf{Responsabilidades} & Método encargado de determinar si el conductor tiene problemas de cansancio mientras se encuentra conduciendo, teniendo en cuenta la trayectoria que sigue el vehículo, la posición del volante y los datos faciales obtenidos anteriormente.  \\ \hline
+\textbf{Referencias cruzadas} & CDU-09: detener vehículo  \\ \hline
+\textbf{Pre-condiciones} & \tabitem El sistema de pérdida de atención tiene que estar activado \\
+                          & \tabitem El vehículo tiene que estar en circulación \\
+                          & \tabitem Los datos a analizar y comparar tienen que existir y estar bien tomados  \\ \hline
+\textbf{Post-condiciones} &    \\ \hline
+\end{tabular}
+\caption{CO-17.}
+\label{tab:CO-17.}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}} \hline \hline
+\textbf{Identificador} & CO-18 \\ \hline
+\textbf{Método} & generarNotificacionSonora()\\ \hline
+\textbf{Responsabilidades} & Método encargado de avisar al conductor mediante una notificación sonora que no se encuentra en las condiciones óptimas para conducir.   \\ \hline
+\textbf{Referencias cruzadas} & CDU-09: detener vehículo  \\ \hline
+\textbf{Pre-condiciones} & \tabitem El sistema de pérdida de atención tiene que estar activado \\
+                          & \tabitem El vehículo tiene que estar en circulación \\
+                          & \tabitem El conductor debe mostrar síntomas de fatiga al volante \\ \hline
+\textbf{Post-condiciones} &  \tabitem El sistema genera una notificación sonora   \\ \hline
+\end{tabular}
+\caption{CO-18.}
+\label{tab:CO-18.}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}} \hline \hline
+\textbf{Identificador} & CO-19 \\ \hline
+\textbf{Método} & frenar()\\ \hline
+\textbf{Responsabilidades} & Este método es el encargado de frenar progresivamente el coche después de emitir la alerta sonora durante más de 3 segundos y el conductor sigue circulando.   \\ \hline
+\textbf{Referencias cruzadas} & CDU-09: detener vehículo  \\ \hline
+\textbf{Pre-condiciones} & \tabitem El sistema de pérdida de atención tiene que estar activado \\
+                          & \tabitem El vehículo tiene que estar en circulación \\
+                          & \tabitem El conductor debe mostrar síntomas de fatiga al volante \\
+                          & \tabitem La alerta sonora ha estado activada durante más de 3 segundos \\ \hline
+
+\textbf{Post-condiciones} &  \tabitem El sistema detiene progresivamente el vehículo     \\ \hline
+\end{tabular}
+\caption{CO-19.}
+\label{tab:CO-19.}
+\end{center}
+\end{table}
+
+\item Diagrama de secuencia correspondiente al caso de uso: \textbf{alerta notificación por riesgo colisión}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}} \hline \hline
+\textbf{Identificador} & CO-20 \\ \hline
+\textbf{Método} & arrancarVehículo() \\ \hline
+\textbf{Responsabilidades} & Método que simula el arranque del vehículo \\ \hline
+\textbf{Referencias cruzadas} & CDU-11: alerta notificación por riesgo colisión  \\ \hline
+\textbf{Pre-condiciones} & \tabitem El simulador del vehículo no está arrancado \\ \hline
+\textbf{Post-condiciones} & \tabitem El simulador del vehículo está arrancado   \\ \hline
+\end{tabular}
+\caption{CO-20.}
+\label{tab:CO-20.}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}} \hline \hline
+\textbf{Identificador} & CO-21 \\ \hline
+\textbf{Método} & activar() \\ \hline
+\textbf{Responsabilidades} & Este método es el encargado de inicializar el sistema encargado de detectar un objeto en la vía que pueda provocar una colisión con el vehículo  \\ \hline
+\textbf{Referencias cruzadas} & CDU-11: alerta notificación por riesgo colisión  \\ \hline
+\textbf{Pre-condiciones} & \tabitem El simulador del vehículo está arrancado \\ \hline
+\textbf{Post-condiciones} & \tabitem El sistema de alerta precolisión está activado   \\ \hline
+\end{tabular}
+\caption{CO-21.}
+\label{tab:CO-21.}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}} \hline \hline
+\textbf{Identificador} & CO-22 \\ \hline
+\textbf{Método} & activar() \\ \hline
+\textbf{Responsabilidades} & Este método es el encargado de activar el sensor encargado de detectar obstáculos en la vía  \\ \hline
+\textbf{Referencias cruzadas} & CDU-05: CDU-11: alerta notificación por riesgo colisión  \\ \hline
+\textbf{Pre-condiciones} & \tabitem El sistema de alerta por precolisión está activado \\ \hline
+\textbf{Post-condiciones} & \tabitem El sensor de sistema de alerta de precolisión está activado    \\ \hline
+\end{tabular}
+\caption{CO-22.}
+\label{tab:CO-22}
+\end{center}
+\end{table}
+
+
+
+
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}} \hline \hline
+\textbf{Identificador} & CO-23 \\ \hline
+\textbf{Método} & analizarObstaculos() \\ \hline
+\textbf{Responsabilidades} & Este método utiliza el sensor incorporado en el vehículo para comprobar si existe algún tipo de objeto que se encuentre en la trayectoria del vehículo.   \\ \hline
+\textbf{Referencias cruzadas} & CDU-11: alerta notificación por riesgo colisión  \\ \hline
+\textbf{Pre-condiciones} & \tabitem El simulador del vehículo está arrancado \\
+                          & \tabitem El sensor tiene que poder captar los objetos que vayan apareciendo \\ \hline
+\textbf{Post-condiciones} & \tabitem El sistema recibe la distancia a la que se encuentra el objeto    \\ \hline
+\end{tabular}
+\caption{CO-23.}
+\label{tab:CO-23.}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}} \hline \hline
+\textbf{Identificador} & CO-24 \\ \hline
+\textbf{Método} & objetoDetectado() \\ \hline
+\textbf{Responsabilidades} & Este método es el encargado de enviar una señal cuándo se detecte un objeto en la vía por la que circula el vehículo.   \\ \hline
+\textbf{Referencias cruzadas} & CDU-11: alerta notificación por riesgo colisión  \\ \hline
+\textbf{Pre-condiciones} & \tabitem El simulador del vehículo está arrancado \\
+                          & \tabitem El sensor tiene que poder captar los objetos que vayan apareciendo \\ \hline
+\textbf{Post-condiciones} & \tabitem El sistema una señal indicando la detección de un objeto en la vía    \\ \hline
+\end{tabular}
+\caption{CO-24.}
+\label{tab:CO-24.}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}} \hline \hline
+\textbf{Identificador} & CO-25 \\ \hline
+\textbf{Método} & getVelocidad() \\ \hline
+\textbf{Responsabilidades} & Este método es el encargado de coger la velocidad a la que se encuentra circulando el vehículo    \\ \hline
+\textbf{Referencias cruzadas} & CDU-11: alerta notificación por riesgo colisión  \\ \hline
+\textbf{Pre-condiciones} & \tabitem El sensor tiene que poder captar los objetos que vayan apareciendo \\
+                          & \tabitem El vehículo tiene que estar circulando \\ \hline
+\textbf{Post-condiciones} & \tabitem El sistema obtiene la velocidad de circulación    \\ \hline
+\end{tabular}
+\caption{CO-25.}
+\label{tab:CO-25.}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}} \hline \hline
+\textbf{Identificador} & CO-26 \\ \hline
+\textbf{Método} & calcularProbabilidad() \\ \hline
+\textbf{Responsabilidades} & Este método es el encargado de determinar si el objeto puede provocar alguna situación de riesgo al conductor. Ésto será posible gracias a la distancia y a la velocidad que hemos obtenido anteriormente.     \\ \hline
+\textbf{Referencias cruzadas} & CDU-11: alerta notificación por riesgo colisión  \\ \hline
+\textbf{Pre-condiciones} & \tabitem El sensor tiene que poder captar los objetos que vayan apareciendo \\
+                          & \tabitem El vehículo tiene que estar circulando \\ \hline
+\textbf{Post-condiciones} & \tabitem  \\ \hline
+\end{tabular}
+\caption{CO-26.}
+\label{tab:CO-26.}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}} \hline \hline
+\textbf{Identificador} & CO-27 \\ \hline
+\textbf{Método} & activarNotificacion() \\ \hline
+\textbf{Responsabilidades} & Este método es el encargado de mandar una notificación al conductor en el caso que se esté circulando a una velocidad superior a la permitida   \\ \hline
+\textbf{Referencias cruzadas} & CDU-11: alerta notificación por riesgo colisión  \\ \hline
+\textbf{Pre-condiciones} & \tabitem El sensor tiene que poder captar los objetos que vayan apareciendo \\
+                          & \tabitem El vehículo tiene que estar circulando \\
+                          & \tabitem Tiene que haber un objeto que pueda provocar una colisión con un riesgo del 50\% o más \\ \hline
+\textbf{Post-condiciones} & \tabitem El sistema recibe una notificación \\ \hline
+\end{tabular}
+\caption{CO-27.}
+\label{tab:CO-27.}
+\end{center}
+\end{table}
+
+\item Diagrama de secuencia correspondiente al caso de uso: \textbf{reducir velocidad}
+
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}} \hline \hline
+\textbf{Identificador} & CO-28 \\ \hline
+\textbf{Método} & arrancarVehículo() \\ \hline
+\textbf{Responsabilidades} & Método que simula el arranque del vehículo \\ \hline
+\textbf{Referencias cruzadas} & CDU-13: reducir velocidad  \\ \hline
+\textbf{Pre-condiciones} & \tabitem El simulador del vehículo no está arrancado \\ \hline
+\textbf{Post-condiciones} & \tabitem El simulador del vehículo está arrancado   \\ \hline
+\end{tabular}
+\caption{CO-28.}
+\label{tab:CO-28.}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}} \hline \hline
+\textbf{Identificador} & CO-29 \\ \hline
+\textbf{Método} & activar() \\ \hline
+\textbf{Responsabilidades} & Este método es el encargado de inicializar el sistema encargado de detectar un objeto en la vía que pueda provocar una colisión con el vehículo  \\ \hline
+\textbf{Referencias cruzadas} & CDU-13: reducir velocidad   \\ \hline
+\textbf{Pre-condiciones} & \tabitem El simulador del vehículo está arrancado \\ \hline
+\textbf{Post-condiciones} & \tabitem El sistema de alerta precolisión está activado   \\ \hline
+\end{tabular}
+\caption{CO-29.}
+\label{tab:CO-29.}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}} \hline \hline
+\textbf{Identificador} & CO-30 \\ \hline
+\textbf{Método} & activar() \\ \hline
+\textbf{Responsabilidades} & Este método es el encargado de activar el sensor encargado de detectar obstáculos en la vía  \\ \hline
+\textbf{Referencias cruzadas} & CDU-13: reducir velocidad   \\ \hline
+\textbf{Pre-condiciones} & \tabitem El sistema de alerta por precolisión está activado \\ \hline
+\textbf{Post-condiciones} & \tabitem El sensor de sistema de alerta de precolisión está activado    \\ \hline
+\end{tabular}
+\caption{CO-30.}
+\label{tab:CO-30}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}} \hline \hline
+\textbf{Identificador} & CO-31 \\ \hline
+\textbf{Método} & analizarObstaculos() \\ \hline
+\textbf{Responsabilidades} & Este método utiliza el sensor incorporado en el vehículo para comprobar si existe algún tipo de objeto que se encuentre en la trayectoria del vehículo.   \\ \hline
+\textbf{Referencias cruzadas} & CDU-13: reducir velocidad   \\ \hline
+\textbf{Pre-condiciones} & \tabitem El simulador del vehículo está arrancado \\
+                          & \tabitem El sensor tiene que poder captar los objetos que vayan apareciendo \\ \hline
+\textbf{Post-condiciones} & \tabitem El sistema recibe la distancia a la que se encuentra el objeto    \\ \hline
+\end{tabular}
+\caption{CO-31.}
+\label{tab:CO-31.}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}} \hline \hline
+\textbf{Identificador} & CO-32 \\ \hline
+\textbf{Método} & objetoDetectado() \\ \hline
+\textbf{Responsabilidades} & Este método es el encargado de enviar una señal cuándo se detecte un objeto en la vía por la que circula el vehículo.   \\ \hline
+\textbf{Referencias cruzadas} & CDU-13: reducir velocidad   \\ \hline
+\textbf{Pre-condiciones} & \tabitem El simulador del vehículo está arrancado \\
+                          & \tabitem El sensor tiene que poder captar los objetos que vayan apareciendo \\ \hline
+\textbf{Post-condiciones} & \tabitem El sistema una señal indicando la detección de un objeto en la vía    \\ \hline
+\end{tabular}
+\caption{CO-32.}
+\label{tab:CO-32.}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}} \hline \hline
+\textbf{Identificador} & CO-33 \\ \hline
+\textbf{Método} & getVelocidad() \\ \hline
+\textbf{Responsabilidades} & Este método es el encargado de coger la velocidad a la que se encuentra circulando el vehículo    \\ \hline
+\textbf{Referencias cruzadas} & CDU-13: reducir velocidad   \\ \hline
+\textbf{Pre-condiciones} & \tabitem El sensor tiene que poder captar los objetos que vayan apareciendo \\
+                          & \tabitem El vehículo tiene que estar circulando \\ \hline
+\textbf{Post-condiciones} & \tabitem El sistema obtiene la velocidad de circulación    \\ \hline
+\end{tabular}
+\caption{CO-33.}
+\label{tab:CO-33.}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}} \hline \hline
+\textbf{Identificador} & CO-34 \\ \hline
+\textbf{Método} & calcularProbabilidad() \\ \hline
+\textbf{Responsabilidades} & Este método es el encargado de determinar si el objeto puede provocar alguna situación de riesgo al conductor. Ésto será posible gracias a la distancia y a la velocidad que hemos obtenido anteriormente.     \\ \hline
+\textbf{Referencias cruzadas} & CDU-13: reducir velocidad   \\ \hline
+\textbf{Pre-condiciones} & \tabitem El sensor tiene que poder captar los objetos que vayan apareciendo \\
+                          & \tabitem El vehículo tiene que estar circulando \\ \hline
+\textbf{Post-condiciones} & \tabitem  \\ \hline
+\end{tabular}
+\caption{CO-34.}
+\label{tab:CO-34.}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}} \hline \hline
+\textbf{Identificador} & CO-35 \\ \hline
+\textbf{Método} & activarNotificacion() \\ \hline
+\textbf{Responsabilidades} & Este método es el encargado de mandar una notificación al conductor en el caso que se esté circulando a una velocidad superior a la permitida   \\ \hline
+\textbf{Referencias cruzadas} & CDU-13: reducir velocidad   \\ \hline
+\textbf{Pre-condiciones} & \tabitem El sensor tiene que poder captar los objetos que vayan apareciendo \\
+                          & \tabitem El vehículo tiene que estar circulando \\
+                          & \tabitem Tiene que haber un objeto que pueda provocar una colisión con un riesgo del 50\% o más \\ \hline
+\textbf{Post-condiciones} & \tabitem El sistema recibe una notificación \\ \hline
+\end{tabular}
+\caption{CO-35.}
+\label{tab:CO-35.}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}} \hline \hline
+\textbf{Identificador} & CO-36 \\ \hline
+\textbf{Método} & reducirVelocidad() \\ \hline
+\textbf{Responsabilidades} & Este método es el encargado de frenar el coche para evitar la colisión siempre y cuando se haya detectado que el conductor ha pisado el freno en primer lugar.    \\ \hline
+\textbf{Referencias cruzadas} & CDU-13: reducir velocidad  \\ \hline
+\textbf{Pre-condiciones} & \tabitem El sensor tiene que poder captar los objetos que vayan apareciendo \\
+                          & \tabitem El vehículo tiene que estar circulando \\
+                          & \tabitem Tiene que haber un objeto que pueda provocar una colisión con un riesgo del 50\% o más \\
+                          & \tabitem El conductor ha pisado el freno \\ \hline
+\textbf{Post-condiciones} & \tabitem El sistema recibe una notificación \\ \hline
+\end{tabular}
+\caption{CO-36.}
+\label{tab:CO-36.}
+\end{center}
+\end{table}
+
+\item Diagrama de secuencia correspondiente al caso de uso: \textbf{preparar vehículo para impacto}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}} \hline \hline
+\textbf{Identificador} & CO-37 \\ \hline
+\textbf{Método} & arrancarVehículo() \\ \hline
+\textbf{Responsabilidades} & Método que simula el arranque del vehículo \\ \hline
+\textbf{Referencias cruzadas} & CDU-12: preparar vehículo para impacto  \\ \hline
+\textbf{Pre-condiciones} & \tabitem El simulador del vehículo no está arrancado \\ \hline
+\textbf{Post-condiciones} & \tabitem El simulador del vehículo está arrancado   \\ \hline
+\end{tabular}
+\caption{CO-37.}
+\label{tab:CO-37.}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}} \hline \hline
+\textbf{Identificador} & CO-38 \\ \hline
+\textbf{Método} & activar() \\ \hline
+\textbf{Responsabilidades} & Este método es el encargado de inicializar el sistema encargado de detectar un objeto en la vía que pueda provocar una colisión con el vehículo  \\ \hline
+\textbf{Referencias cruzadas} & CDU-12: preparar vehículo para impacto   \\ \hline
+\textbf{Pre-condiciones} & \tabitem El simulador del vehículo está arrancado \\ \hline
+\textbf{Post-condiciones} & \tabitem El sistema de alerta precolisión está activado   \\ \hline
+\end{tabular}
+\caption{CO-38.}
+\label{tab:CO-38.}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}} \hline \hline
+\textbf{Identificador} & CO-39 \\ \hline
+\textbf{Método} & activar() \\ \hline
+\textbf{Responsabilidades} & Este método es el encargado de activar el sensor encargado de detectar obstáculos en la vía  \\ \hline
+\textbf{Referencias cruzadas} & CDU-12: preparar vehículo para impacto   \\ \hline
+\textbf{Pre-condiciones} & \tabitem El sistema de alerta por precolisión está activado \\ \hline
+\textbf{Post-condiciones} & \tabitem El sensor de sistema de alerta de precolisión está activado    \\ \hline
+\end{tabular}
+\caption{CO-39.}
+\label{tab:CO-39}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}} \hline \hline
+\textbf{Identificador} & CO-40 \\ \hline
+\textbf{Método} & analizarObstaculos() \\ \hline
+\textbf{Responsabilidades} & Este método utiliza el sensor incorporado en el vehículo para comprobar si existe algún tipo de objeto que se encuentre en la trayectoria del vehículo.   \\ \hline
+\textbf{Referencias cruzadas} & CDU-12: preparar vehículo para impacto   \\ \hline
+\textbf{Pre-condiciones} & \tabitem El simulador del vehículo está arrancado \\
+                          & \tabitem El sensor tiene que poder captar los objetos que vayan apareciendo \\ \hline
+\textbf{Post-condiciones} & \tabitem El sistema recibe la distancia a la que se encuentra el objeto    \\ \hline
+\end{tabular}
+\caption{CO-40.}
+\label{tab:CO-40.}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}} \hline \hline
+\textbf{Identificador} & CO-41 \\ \hline
+\textbf{Método} & objetoDetectado() \\ \hline
+\textbf{Responsabilidades} & Este método es el encargado de enviar una señal cuándo se detecte un objeto en la vía por la que circula el vehículo.   \\ \hline
+\textbf{Referencias cruzadas} & CDU-12: preparar vehículo para impacto   \\ \hline
+\textbf{Pre-condiciones} & \tabitem El simulador del vehículo está arrancado \\
+                          & \tabitem El sensor tiene que poder captar los objetos que vayan apareciendo \\ \hline
+\textbf{Post-condiciones} & \tabitem El sistema una señal indicando la detección de un objeto en la vía    \\ \hline
+\end{tabular}
+\caption{CO-41.}
+\label{tab:CO-41.}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}} \hline \hline
+\textbf{Identificador} & CO-42 \\ \hline
+\textbf{Método} & getVelocidad() \\ \hline
+\textbf{Responsabilidades} & Este método es el encargado de coger la velocidad a la que se encuentra circulando el vehículo    \\ \hline
+\textbf{Referencias cruzadas} & CDU-12: preparar vehículo para impacto    \\ \hline
+\textbf{Pre-condiciones} & \tabitem El sensor tiene que poder captar los objetos que vayan apareciendo \\
+                          & \tabitem El vehículo tiene que estar circulando \\ \hline
+\textbf{Post-condiciones} & \tabitem El sistema obtiene la velocidad de circulación    \\ \hline
+\end{tabular}
+\caption{CO-42.}
+\label{tab:CO-42.}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}} \hline \hline
+\textbf{Identificador} & CO-43 \\ \hline
+\textbf{Método} & calcularProbabilidad() \\ \hline
+\textbf{Responsabilidades} & Este método es el encargado de determinar si el objeto puede provocar alguna situación de riesgo al conductor. Ésto será posible gracias a la distancia y a la velocidad que hemos obtenido anteriormente.     \\ \hline
+\textbf{Referencias cruzadas} & CDU-12: preparar vehículo para impacto   \\ \hline
+\textbf{Pre-condiciones} & \tabitem El sensor tiene que poder captar los objetos que vayan apareciendo \\
+                          & \tabitem El vehículo tiene que estar circulando \\ \hline
+\textbf{Post-condiciones} & \tabitem  \\ \hline
+\end{tabular}
+\caption{CO-43.}
+\label{tab:CO-43.}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}} \hline \hline
+\textbf{Identificador} & CO-44 \\ \hline
+\textbf{Método} & activarNotificacion() \\ \hline
+\textbf{Responsabilidades} & Este método es el encargado de mandar una notificación al conductor en el caso que se esté circulando a una velocidad superior a la permitida   \\ \hline
+\textbf{Referencias cruzadas} & CDU-12: preparar vehículo para impacto    \\ \hline
+\textbf{Pre-condiciones} & \tabitem El sensor tiene que poder captar los objetos que vayan apareciendo \\
+                          & \tabitem El vehículo tiene que estar circulando \\
+                          & \tabitem Tiene que haber un objeto que pueda provocar una colisión con un riesgo del 50\% o más \\ \hline
+\textbf{Post-condiciones} & \tabitem El sistema recibe una notificación \\ \hline
+\end{tabular}
+\caption{CO-44.}
+\label{tab:CO-44.}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}} \hline \hline
+\textbf{Identificador} & CO-45 \\ \hline
+\textbf{Método} & prepararVehículoImpacto() \\ \hline
+\textbf{Responsabilidades} & Este método es el encargado de preparar el vehículo  para una colisión inminente.    \\ \hline
+\textbf{Referencias cruzadas} & CDU-12 preprar vehículo para impacto \\ \hline
+\textbf{Pre-condiciones} & \tabitem El sensor tiene que poder captar los objetos que vayan apareciendo \\
+                          & \tabitem El vehículo tiene que estar circulando \\
+                          & \tabitem Tiene que haber un objeto que pueda provocar una colisión con un riesgo del 70\% o más \\ \hline
+\textbf{Post-condiciones} & \tabitem El sistema aumenta la seguridad del conductor  \\ \hline
+\end{tabular}
+\caption{CO-45.}
+\label{tab:CO-45.}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}} \hline \hline
+\textbf{Identificador} & CO-46 \\ \hline
+\textbf{Método} & ayudaFrenadp() \\ \hline
+\textbf{Responsabilidades} & Este método es el encargado de ir frenando el vehículo para evitar la colisión con el objeto     \\ \hline
+\textbf{Referencias cruzadas} & CDU-12 preprar vehículo para impacto \\ \hline
+\textbf{Pre-condiciones} & \tabitem El sensor tiene que poder captar los objetos que vayan apareciendo \\
+                          & \tabitem El vehículo tiene que estar circulando \\
+                          & \tabitem Tiene que haber un objeto que pueda provocar una colisión con un riesgo del 70\% o más \\ \hline
+\textbf{Post-condiciones} & \tabitem El sistema disminuye la velocidad  \\ \hline
+\end{tabular}
+\caption{CO-46.}
+\label{tab:CO-46.}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}} \hline \hline
+\textbf{Identificador} & CO-47 \\ \hline
+\textbf{Método} & fijarCinturones() \\ \hline
+\textbf{Responsabilidades} & Este método es el encargado de bloquear los cinturones que esten abrochados, para así reducir el impacto en los pasajeros del vehículo    \\ \hline
+\textbf{Referencias cruzadas} & CDU-12 preprar vehículo para impacto \\ \hline
+\textbf{Pre-condiciones} & \tabitem El sensor tiene que poder captar los objetos que vayan apareciendo \\
+                          & \tabitem El vehículo tiene que estar circulando \\
+                          & \tabitem Tiene que haber un objeto que pueda provocar una colisión con un riesgo del 70\% o más \\ \hline
+\textbf{Post-condiciones} & \tabitem El sistema tiene bloqueados los cinturones  \\ \hline
+\end{tabular}
+\caption{CO-47.}
+\label{tab:CO-47.}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}} \hline \hline
+\textbf{Identificador} & CO-48 \\ \hline
+\textbf{Método} & cerrarVentanillas() \\ \hline
+\textbf{Responsabilidades} & Este método es el encargado de cerrar aquellas ventanillas del vehículo que estén abiertas.   \\ \hline
+\textbf{Referencias cruzadas} & CDU-12 preprar vehículo para impacto \\ \hline
+\textbf{Pre-condiciones} & \tabitem El sensor tiene que poder captar los objetos que vayan apareciendo \\
+                          & \tabitem El vehículo tiene que estar circulando \\
+                          & \tabitem Tiene que haber un objeto que pueda provocar una colisión con un riesgo del 70\% o más \\ \hline
+\textbf{Post-condiciones} & \tabitem El sistema tendrá cerradas las ventanillas  \\ \hline
+\end{tabular}
+\caption{CO-48.}
+\label{tab:CO-48.}
+\end{center}
+\end{table}
+
+
+
+
+
+\end{enumerate}

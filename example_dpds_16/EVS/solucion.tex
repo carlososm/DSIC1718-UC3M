@@ -1,0 +1,139 @@
+\section{Selección de la solución}\label{ref:solucion}
+
+\par Tras haber evaluado los riesgos de cada una de las alternativas planteadas, y tras haber comprobado la viabilidad económica de las mismas, se ha procedido a realizar una comparativa entre las mismas con el fin de escoger la alternativa más adecuada para el sistema. Para ello, se ha desarrollado una matriz de evaluación en la que se pondera cada uno de los items razonadamente añadidos de forma que la suma total de todos ellos sea de 1. De este modo, a cada una de las alternativas se le dará una puntuación comprendida entre 0 y 10 en cada uno de los items razonando esta puntuación para cada caso en particular. La alternativa mejor puntuada en cada uno de los subsistemas será la seleccionada como mejor solución.
+
+\par Cabe destacar que cada uno de los subsistemas tendrá una matriz de evaluación distinta, pues los items seleccionados y sus ponderaciones varían en función de las características de cada uno de los subsistemas.
+
+
+
+\subsection{Selección de la solución a cada subsistema}
+
+\subsubsection{Sistema de comunicación general}
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{2,9cm} p{2,3cm} p{2,3cm} p{2,3cm} p{2,3cm} p{2,3cm} }
+Ponderación & 0,2 & 0,2 & 0,4 & 0,2 & 1 \\ \hline \hline
+ & \textbf{Coste económico} & \textbf{Complejidad tecnológica} & \textbf{Fiabilidad} & \textbf{Retardo de transmisión} & \textbf{TOTAL}\\
+\hline \hline
+\textbf{Alternativa I} & 8 & 8 & 6 & 8 & \textbf{7,2}  \\
+\hline
+\textbf{Alternativa II} & 3 & 4 & 7 & 8 & \textbf{5,8}  \\
+\hline
+\textbf{Alternativa III} & 6 & 7 & 8 & 8 & \textbf{7,4} \\ \hline
+\end{tabular}
+\caption{Valoración del sistema general}
+\label{tab:valSisGeneral}
+\end{center}
+\end{table}
+
+\subsubsection{Aviso de cambio de carril}
+\par En el cambio de carril debemos tener en cuenta el coste económico del software, la complejidad tecnológica de la solución, la fiabilidad del sistema y la precisión de los cálculos de la trayectoria.
+\par En cuanto al coste económico, cada una de las soluciones supone un coste diferente siendo este un factor de relevancia para el cliente, aunque no el más importante. Así, a mayor coste de una alternativa, menor puntuación en el citado apartado.
+\par Por su lado, en cuanto a la complejidad tecnológica, no nos referimos al coste que puede suponer la utilización de tecnologías más complejas de implementar, sino a los riesgos que conlleva trabajar con tecnología compleja o poco utilizada. Por ello, cuanto más compleja sea la tecnología usada, una menor puntuación se dará a la alternativa.
+\par Por otra parte, en cuanto a la fiabilidad se refiere, resulta lógico pensar que es un elemento importante en el cambio de carril, pues es indispensable que el sistema refleje de manera fiel si el vehículo está siguiendo o no la trayectoria y que lo notifique con la máxima fiabilidad.
+\par Así mismo, se debe valorar cuál de las alternativas ofrece una precisión mayor en los cálculos realizados de la trayectoria.
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{2,9cm} p{2,3cm} p{2,3cm} p{2,3cm} p{2,3cm} p{2,3cm} }
+Ponderación & 0,2 & 0,2 & 0,3 & 0,3 & 1 \\ \hline \hline
+ & \textbf{Coste económico} & \textbf{Complejidad tecnológica} & \textbf{Fiabilidad de las notificaciones} & \textbf{Precisión de la trayectoria} & \textbf{TOTAL}\\
+\hline \hline
+\textbf{Alternativa I} & 5 & 7 & 8 & 8 & \textbf{7,2}  \\
+\hline
+\textbf{Alternativa II} & 8 & 5 & 7 & 8 & \textbf{7,1}  \\
+\hline
+\textbf{Alternativa III} & 6 & 8 & 9 & 9 & \textbf{8,2} \\ \hline
+\end{tabular}
+\caption{Valoración del cambio de carril}
+\label{tab:valSisCarril}
+\end{center}
+\end{table}
+
+\subsubsection{Control de punto ciego}
+\par En este subsitema resulta de vital importancia tanto la fiabilidad en la notificación al usuario de la existencia de un punto ciego como la precisión con la que se detecta el vehículo en el punto ciego. Así mismo, como en casos anteriores, resulta importante para el cliente el coste económico. Por otro lado, y como ya se ha visto en subsistemas anteriores, se debe tener en cuenta la complejidad de la tecnología utilizada.
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{2,9cm} p{2,3cm} p{2,3cm} p{2,3cm} p{2,3cm} p{2,3cm} }
+Ponderación & 0,2 & 0,2 & 0,3 & 0,3 & 1 \\ \hline \hline
+ & \textbf{Coste económico} & \textbf{Complejidad tecnológica} & \textbf{Fiabilidad de las notificaciones} & \textbf{Precisión de los cálculos} & \textbf{TOTAL}\\
+\hline \hline
+\textbf{Alternativa I} & 4 & 8 & 7 & 7 & \textbf{6,6}  \\
+\hline
+\textbf{Alternativa II} & 7 & 8 & 7 & 6 & \textbf{6,9}  \\
+\hline
+\textbf{Alternativa III} & 9 & 6 & 7 & 9 & \textbf{7,8} \\ \hline
+\end{tabular}
+\caption{Valoración del control del punto ciego}
+\label{tab:valSisCiego}
+\end{center}
+\end{table}
+
+\subsubsection{Alerta de velocidad}
+\par En este subsistema la fiabilidad cobra mayor importancia, pues resulta imprescindible conocer la velocidad máxima real de circulación. El tiempo de cálculo de la misma, sin embargo, no parece ser un problema en este subsistema, teniendo en cuenta que los tiempos de cálculo de las distintas alternativas es relativamente bajo respecto a las necesidades requeridas.
+\par Sin embargo, cobra importancia la disponibilidad de la información, pues dependiendo de la alternativa seleccionada esta puede ser mayor o menor.
+\par Así pues, os aspectos valorados en la alerta de velocidad serán el coste económico, la complejidad tecnológica, la fiabilidad y la disponibilidad de la información.
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{2,9cm} p{2,3cm} p{2,3cm} p{2,3cm} p{2,3cm} p{2,3cm} }
+Ponderación & 0,2 & 0,2 & 0,4 & 0,2 & 1 \\ \hline \hline
+ & \textbf{Coste económico} & \textbf{Complejidad tecnológica} & \textbf{Fiabilidad} & \textbf{Disponibilidad} & \textbf{TOTAL}\\
+\hline \hline
+\textbf{Alternativa I} & 6 & 8 & 8 & 7 & \textbf{7,4}  \\
+\hline
+\textbf{Alternativa II} & 9 & 7 & 7 & 7 & \textbf{7,4}  \\
+\hline
+\textbf{Alternativa III} & 7 & 8 & 9 & 9 & \textbf{8,4} \\ \hline
+\end{tabular}
+\caption{Valoración de la alerta de velocidad}
+\label{tab:valSisVel}
+\end{center}
+\end{table}
+
+\subsubsection{Alertas de precolisión}
+\par En el subsistema de alertas de precolisión parece lógico reducir el peso del coste económico y de la complejidad de la tecnología usada ya que se trata de un subsistema de vital importancia a nivel de seguridad.
+\par Es por ese mismo motivo por el que se le da una alta ponderación a la fiabilidad del sistema (pues sería fatal que el sistema no predijera una precolisión) y al tiempo de reacción del sistema (pues, por muy fiable que sea, si no se reacciona a tiempo no se podrá evitar la colisión).
+\par Así mismo, cobra también importancia la distancia a la que cada una de las alternativas son capaces de detectar los obstáculos que pueden provocar la colisión.
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{2,4cm} p{2,1cm} p{2,1cm} p{2,1cm} p{2,1cm} p{2,1cm} p{2,1cm}}
+Ponderación & 0,05 & 0,05 & 0,3 & 0,3 & 0,03 & 1 \\ \hline \hline
+ & \textbf{Coste económico} & \textbf{Complejidad tecnológica} & \textbf{Fiabilidad} & \textbf{Tiempo de reacción} & \textbf{Alcance} & \textbf{TOTAL} \\
+\hline \hline
+\textbf{Alternativa I} & 7 & 7 & 8 & 7 & 8 & \textbf{7,6}  \\
+\hline
+\textbf{Alternativa II} & 9 & 7 & 7 & 7 & 8 & \textbf{7,4}  \\
+\hline
+\textbf{Alternativa III} & 7 & 8 & 9 & 9 & 10 & \textbf{9,15} \\ \hline
+\end{tabular}
+\caption{Valoración del sistema de pre-colisión}
+\label{tab:valSisPreCol}
+\end{center}
+\end{table}
+
+
+
+
+\subsection{Selección de la solución global}
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{2,4cm} p{2,1cm} p{2,1cm} p{2,1cm} p{2,1cm} p{2,1cm} p{2,1cm}}
+ & \textbf{Sistema General} & \textbf{Cambio de Carril} & \textbf{Punto ciego} & \textbf{Velocidad} & \textbf{Pre-colisión} & \textbf{TOTAL} \\
+\hline \hline
+\textbf{Alternativa I} & 7,2 & 7,2 & 6,6 & 7,4 & 7,6 & \textbf{7,20}  \\
+\hline
+\textbf{Alternativa II} & 5,8 & 7,1 & 6,9 & 7,4 & 7,4 & \textbf{6,92}  \\
+\hline
+\textbf{Alternativa III} & 7,4 & 8,2 & 7,8 & 8,4 & 9,15 & \textbf{8,19} \\ \hline
+\end{tabular}
+\caption{Selección de la solución}
+\label{tab:solucion}
+\end{center}
+\end{table}
+
+
+\par Como se puede ver, la valoración global de los riesgos de las alternativas, la viabilidad económica de las mismas y las tablas de selección nos indican que la mejor opción es la alternativa tres, pues supone un coste menor, los riesgos de la centralización son menores al estar más distribuida, y el uso de láser y radares la hacen más fiable.
+
+\par Por todo ello, y con la única salvedad de la gestión de los mapas, se decide proponer la alternativa tres como solución a este problema.

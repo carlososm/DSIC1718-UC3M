@@ -1,0 +1,99 @@
+\appendix
+\chapter{Estimación por casos de uso}\label{sec:apEst}
+
+Para la estimción del tiempo total que se ha de dedicar al proyecto se ha usado la estimación por casos de uso. De esta forma, lo primero que se ha realizado ha sido identificar los actores de que actuaran en los casos de uso. Estos actores son los objetos (árboles, postes y similares), el vehículo del usuario y el propio conductor, as señales de tráfico y el GPS. Así, y como se puede ver en la tabla \ref{tab:uaw}, se le asigna una dificultad y una ponderación a cada uno de los actores que participan en los casos de uso. Ello refleja el factor de peso de los actores sin ajustar. Sin embargo, no basta con el factor de peso de los actores, sino que se ha de calcular el factor de peso de los casos de uso sin ajustar. En este caso, se le han asignado los factores de ponderación en función del tipo de caso como puede verse en la tabla \ref{tab:ucw}. Así, multiplicando el número de casos de uso (\textit{\#CASOS DE USO}) por la ponderación asignada, calculamos el total de puntos de cada tipo de dificultad. De esta forma, el total de los puntos de casos de uso sin ajustar sería 130, el equivalente a la suma de los totales de \ref{tab:uaw} y \ref{tab:ucw}.
+\par Tras ello, se han calculado los factores de dificultad técnica y los ambientales (véanse las tablas \ref{tab:tcf} y \ref{tab:ef}). Con ello, multiplicando los factores ambientales, los técnicos y el total de puntos de casos de uso sin ajustar, se ha obtenido que el total de puntos de casos de uso ajustados son 104,104. De esta forma, se ha calculado que el total de horas hombre es de 2082,08 en tiempo de programación. Por ello, se ha calculado que el total de horas que se deberán dedicar a este proyecto es de $2082,82/0,4=5205,2$, ya que, como se puede ver en la tabla \ref{tab:porcentajeAct}, el porcentaje que se estima se dedicará a programación será del 40\%.
+\par Con esta estimación de horas totales, en la tabla \ref{tab:repHoras}, como ya se ha mencionado, se ha realizado el reparto de horas entre los miembros del equipo de forma que el total de las mismas coincida con el total estimado.
+
+\begin{table}[!hb]
+\begin{center}
+\begin{tabular}{l l c}
+\textbf{ACTOR} & \textbf{DIFICULTAD} & \textbf{PONDERACIÓN}\\ \hline \hline
+Objeto externo & Medio & 2  \\
+Propio vehículo & Medio & 2\\
+Conductor & Complejo & 3\\
+Señales & Medio & 2\\
+GPS & Fácil & 1\\ \hline
+\textbf{TOTAL} &  & \textbf{10}\\ \hline \hline
+\end{tabular}
+\caption{Factor de peso de los actores sin ajustar.}
+\label{tab:uaw}
+\end{center}
+\end{table}
+
+
+\begin{table}[!hb]
+\begin{center}
+\begin{tabular}{l c c c}
+\textbf{DIFICULTAD} & \textbf{\#CASO DE USO} & \textbf{PONDERACIÓN} & \textbf{TOTAL}\\ \hline \hline
+Fácil & 5 & 5 & 25  \\
+Medio & 5 & 10 & 50\\
+Complejo & 3 & 15 & 45\\ \hline
+\textbf{TOTAL} &  & & \textbf{120}\\ \hline \hline
+\end{tabular}
+\caption{Factor de peso de los casos de uso sin ajustar.}
+\label{tab:ucw}
+\end{center}
+\end{table}
+
+
+\begin{table}[!hb]
+\begin{center}
+\begin{tabular}{l l c c c}
+\textbf{TFC} & \textbf{DESCRIPCIÓN} & \textbf{PESO} & \textbf{VALOR} & \textbf{FACTOR}\\ \hline \hline
+T1	&	Sistema distribuido	&	2	&	1	&	2	\\
+T2	&	Tiempo de respuesta	&	1	&	5	&	5	\\
+T3	&	Eficiencia por el usuario	&	1	&	2	&	2	\\
+T4	&	Proceso interno complejo	&	1	&	5	&	5	\\
+T5	&	Re-usabilidad	&	1	&	2	&	2	\\
+T6	&	Facilidad Instalación	&	0,5	&	5	&	2,5	\\
+T7	&	Facilidad de uso	&	0,5	&	5	&	2,5	\\
+T8	&	Portabilidad	&	2	&	3	&	6	\\
+T9	&	Facilidad de cambio	&	1	&	5	&	5	\\
+T10	&	Concurrencia	&	1	&	5	&	5	\\
+T11	&	Objetivos especiales de seguridad	&	1	&	5	&	5	\\
+T12	&	Acceso directo a terceras partes	&	1	&	1	&	1	\\
+T13	&	Facilidades especiales de entrenamiento a usuarios finales	&	1	&	1	&	1	\\ \hline
+\textbf{TOTAL} & & & & \textbf{120}\\ \hline \hline
+\multicolumn{2}{l}{}\textbf{Factores técnicos} & \textbf{1,04} & & \\ \hline \hline
+\end{tabular}
+\caption{Peso de los factores de complejidad técnica.}
+\label{tab:tcf}
+\end{center}
+\end{table}
+
+\begin{table}[!hb]
+\begin{center}
+\begin{tabular}{l l c c c}
+\textbf{EF} & \textbf{DESCRIPCIÓN} & \textbf{PESO} & \textbf{VALOR} & \textbf{FACTOR}\\ \hline \hline
+E1	&	Familiaridad con el modelo del proyecto usado	&	1,5	&	2	&	3	\\
+E2	&	Experiencia en la aplicación	&	0,5	&	2	&	1	\\
+E3	&	Experiencia OO	&	1	&	4	&	4	\\
+E4	&	Capacidad del analista líder	&	0,5	&	4	&	2	\\
+E5	&	Motivación	&	1	&	5	&	5	\\
+E6	&	Estabilidad de los requerimientos	&	2	&	5	&	10	\\
+E7	&	Personal media jornada	&	-1	&	0	&	0	\\
+E8	&	Dificultad en lenguaje de programación	&	-1	&	4	&	-4	\\ \hline
+\textbf{TOTAL} & & & & \textbf{21}\\ \hline \hline
+\multicolumn{2}{l}{}\textbf{Factores ambientales} & \textbf{0,77} & & \\ \hline \hline
+\end{tabular}
+\caption{Peso de los factores ambientales.}
+\label{tab:ef}
+\end{center}
+\end{table}
+
+\begin{table}[!hb]
+\begin{center}
+\begin{tabular}{l c c}
+\textbf{ACTIVIDAD} & \textbf{PORCENTAJE} & \textbf{REAL}\\ \hline \hline
+Análisis & 10\% & 520,52 \\
+Diseño & 20\% & 1.041,04 \\
+Programación & 40\% & 2.082,08 \\
+Pruebas & 15\% & 780,78 \\
+Sobrecarga & 15\% & 780,78 \\ \hline
+\textbf{TOTAL} & \textbf{100\%} & \textbf{5.205,2}\\ \hline \hline
+\end{tabular}
+\caption{Peso de los factores ambientales.}
+\label{tab:porcentajeAct}
+\end{center}
+\end{table}

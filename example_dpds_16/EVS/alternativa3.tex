@@ -1,0 +1,127 @@
+\subsection{Alternativa III}
+
+\par Para la tercera alternativa se le ha propuesto al cliente que el sistema central esté controlado por un dispositivo que contará con un procesador SnapDragon 820 de Qualcomm, una memoria RAM de 4 GB, una memoria principal de 64 GB y se podrá controlar desde una pantalla táctil. Este dispositivo tendrá el sistema operativo Android 7.1 Nougat. Este controlador contará además con un puerto compatible con el bus CAN \cite{WEB:CocheOBD}. Este dispositivo funcionará como ordenador de a bordo, y será el encargado de recibir las notificaciones provenientes del resto de subsistemas.
+
+
+Además en el sistema operativo vendrá preinstalada la aplicación HERE WeGo de Nokia con los mapas del país de compra del vehículo descargados.
+
+La conexión de este sistema con el resto de subsistemas se realizará a través de un bus con el protocolo Controller Area Network, que es implementado por la mayoría de los coches.
+
+
+\par A continuación se detallan las alternativas propuestas para cada uno de los subsistemas:
+\begin{itemize}[-]
+    \item Para el \textbf{control del punto ciego} utilizaremos un sonar infrarrojos modelo Maxbotix XL-MaxSonar-EZ0. Se colocarán dos sensores de este modelo en las esquinas traseras del vehículo para poder detectar si hay un vehículo en el punto ciego. La distancia máxima a la que detectará un vehículo es 765 cm.
+    \item En los subsistemas \textbf{cambio de carril y alerta de velocidad} se usará una cámara situada en la parte superior de la luna frontal del vehículo. La cámara será una Basler SCA640-70FC que implementa el protocolo IEEE1394 \cite{WEB:IEEE1394} \cite{WEB:NatInstruments}. Dicho protocolo es un tipo de conexión destinado a la entrada y salida de datos en serie a gran velocidad y está específicamente diseñada para soportar la visión artificial.
+    Esta cámara irá conectada a un controlador y FPGA de Xilinx modelo XC7Z015-1CLG485C. Utilizar una FPGA en lugar de una CPU ayudará a reducir el tiempo de procesamiento de las imágenes, que computacionalmente es muy costoso.
+
+    En el subsistema de cambio de carril este hardware irá controlando constantemente las líneas del carril de la calzada, mientras que en el de alerta de velocidad la cámara detectará las señales que se encuentre y la FPGA las procesará.
+    \item Para el sistema \textbf{\textit{pre-crash}}  se utilizará un láser para detectar obstáculos a una distancia máxima de 215 metros. El modelo que se le ha propuesto al cliente es Leddar Vu 8 Channel Module. Esta alternativa influye positivamente en la detección de obstáculos ya que tiene un mayor rango de detección que las cámaras.
+
+\end{itemize}
+\par En el siguiente cuadro se detallarán las alternativas propuestas para los subsistemas:
+
+\begin{center}
+\begin{longtable}{p{5cm} p{8cm}}
+
+%HEAD
+\hline
+\endfirsthead
+\hline
+\endhead
+
+%FOOT
+\hline \multicolumn{2}{r}{\textit{Continúa en la siguiente pagina}} \\
+\endfoot
+\endlastfoot
+
+%table
+\textbf{Sistema General} &
+SnapDragon 820:
+\begin{itemize}
+    \item Precio: 66,26 \euro
+    \item Cuatro núcleos. Dos principales de 2x Kyro a 2.2 GHz y 2 dos secundarios de 2x Kyro a 1.7 GHz
+    \item Arquitectura de 64 bits
+    \item Velocidad de GPU 624 MHz
+\end{itemize}
+Kingston ValueRAM - SODIMM de 204 espigas:
+\begin{itemize}
+    \item Precio: 29,90 \euro
+    \item Capacidad: 4GB
+\end{itemize}
+KingDian SSD:
+\begin{itemize}
+    \item Precio: 27,40 \euro
+    \item Capacidad: 60GB
+    \item Interfaz: SATAIII
+\end{itemize}
+Sistema operativo Android:
+\begin{itemize}
+    \item Última versión estable: 7.1 Nougat
+    \item Fecha de lanzamiento: 20/10/2016
+\end{itemize}
+Mapas HERE WeGo:
+\begin{itemize}
+    \item Mapas offline
+    \item Más de 100 países
+\end{itemize}
+Bus CAN:
+\begin{itemize}
+    \item Precio: 47,99\euro
+\end{itemize}
+\\
+\textbf{Sistema General} &
+Cubieboard4 CC-A80 SoC:
+\begin{itemize}
+    \item Precio: 138 \euro
+    \item RAM: 2GB
+    \item CPU:  Arm Cortex A15x4 up to 2.0GHz, A7x4 up to 1.3GHz
+    \item GPU:  PowerVR 64-core G6230
+\end{itemize}
+Pantalla táctil:
+\begin{itemize}
+    \item Precio: 69,45 \euro
+    \item 7 pulgadas
+    \item Multitouch capacitivo: 10 dedos
+\end{itemize}
+\\ \hline
+
+\textbf{Control del punto ciego} &
+Maxbotix XL-MaxSonar-EZ0 x 2:
+\begin{itemize}
+    \item Precio: 42,55\euro
+    \item Distancia máxima 765cm
+    \item Resolución de 1cm
+\end{itemize}
+\\ \hline
+
+\textbf{Cambio de carril} &
+Basler SCA640-70FC:
+\begin{itemize}
+    \item Precio: 770\euro
+    \item Color: Si
+    \item FPS: 70
+    \item Resolución: 659 x 490
+    \item Puerto: IEEE 1394b
+\end{itemize}
+FPGA SoC XC7Z015-1CLG485C de Xilinx Inc:
+\begin{itemize}
+    \item Precio: 130,06\euro
+    \item 74.000 celdas lógicas
+\end{itemize}
+\\ \hline
+
+\textbf{Alerta pre-colisión} &
+Leddar Vu 8 Channel Module.
+\begin{itemize}
+    \item Precio: 544,85\euro
+    \item Campo de visión horizontal: 100º
+    \item Campo de visión vertical: 0,3º
+    \item Peso: 75 gramos
+    \item Alcance: 215 metros
+    \item Tasa de actualización: 100 Hz
+\end{itemize}
+\\ \hline
+\caption{Especificación de la Alternativa III}
+\label{tab:altIII}
+\end{longtable}
+\end{center}

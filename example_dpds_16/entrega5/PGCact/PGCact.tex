@@ -1,0 +1,118 @@
+\chapter{Estado Actual del Plan de Gestión de la Configuración}
+\section{Definición de los EC hasta el momento}
+\par En este apartado se incluyen los elementos de configuración detectados en el proyecto hasta el momento actual. A medida que se avance en el desarrollo del proyecto y que se vayan generando nuevos elementos de la configuración, se irán añadiendo. Así, puede verse en la tabla \ref{tab:ECactuales} los EC generados hasta el momento:
+
+\begin{center}
+\begin{longtable}{l c l}
+
+%HEAD
+\textbf{ENTREGA} & \textbf{FECHA} & \textbf{IDENTIFICADOR} \\\hline \hline
+\endfirsthead
+\textbf{ENTREGA} & \textbf{FECHA} & \textbf{IDENTIFICADOR} \\\hline \hline
+\endhead
+
+%FOOT
+\hline \multicolumn{3}{r}{\textit{Continúa en la siguiente página}} \\
+\endfoot
+\endlastfoot
+
+%table
+\label{EC:0001}Documento de oferta 1 & 03/03/17 & EC0001\\
+\label{EC:0002}Documento de control 1 de costes & 03/03/17 & EC0002\\
+\label{EC:0003}Estudio de Viabilidad del Sistema 1 & 24/02/17 & EC0003\\
+\label{EC:0004}Documento de oferta 2 & 24/03/17 & EC0004\\
+\label{EC:0005}Documento de control 2 de costes & 24/03/17 & EC0005\\
+\label{EC:0006}Estudio de Viabilidad del Sistema 2 & 24/03/17 & EC0006\\
+\label{EC:0007}Plan de Calidad & 07/04/17 & EC0007\\
+\label{EC:0008}Casos de uso de alto nivel & 07/04/17 & EC0008\\
+\label{EC:0009}Diagrama de casos de uso & 07/04/17 & EC0009\\
+\label{EC:0010}Matriz de trazabilidad & 07/04/17 & EC0010\\
+\label{EC:0011}Priorización de casos de uso & 07/04/17 & EC0011\\
+\label{EC:0012}Estimación & 07/04/17 & EC0012\\
+\label{EC:0013}Planificación y seguimiento & 07/04/17 & EC0013\\
+\label{EC:0014}Informe quinquenal de seguimiento 1 & 07/04/17 & EC0014\\
+\label{EC:0015}Plan de Gestión de la Configuración & 07/04/17 & EC0015\\\hline
+
+\caption{Elementos de Configuración identificados hasta el momento.}\\
+\label{tab:ECactuales}
+\end{longtable}
+\end{center}
+
+
+\section{Definición de las relaciones de los actuales EC}
+\par Entre los EC descritos en el apartado anterior se detectan las siguientes relaciones.
+\subsection{Relaciones de sucesión}
+\begin{itemize}[-]
+  \item \hyperref[EC:0001]{EC0001}-\hyperref[EC:0004]{EC0004}-SUC
+  \item \hyperref[EC:0002]{EC0002}-\hyperref[EC:0005]{EC0005}-SUC
+  \item \hyperref[EC:0003]{EC0003}-\hyperref[EC:0006]{EC0006}-SUC
+\end{itemize}
+
+\subsection{Relaciones de derivación}
+\begin{itemize}[-]
+  \item \hyperref[EC:0001]{EC0001}-\hyperref[EC:0003]{EC0003}-DER
+  \item \hyperref[EC:0002]{EC0002}-\hyperref[EC:0004]{EC0004}-DER
+  \item \hyperref[EC:0004]{EC0004}-\hyperref[EC:0006]{EC0006}-DER
+  \item \hyperref[EC:0005]{EC0005}-\hyperref[EC:0006]{EC0006}-DER
+  \item \hyperref[EC:0006]{EC0006}-\hyperref[EC:0009]{EC0009}-DER
+  \item \hyperref[EC:0008]{EC0008}-\hyperref[EC:0011]{EC0012}-DER
+  \item \hyperref[EC:0008]{EC0008}-\hyperref[EC:0011]{EC0011}-DER
+\end{itemize}
+
+\subsection{Relaciones de dependencia}
+\begin{itemize}[-]
+  \item \hyperref[EC:0006]{EC0006}-\hyperref[EC:0009]{EC0009}-DEP
+  \item \hyperref[EC:0009]{EC0009}-\hyperref[EC:0008]{EC0008}-DEP
+  \item \hyperref[EC:0008]{EC0008}-\hyperref[EC:0012]{EC0012}-DEP
+  \item \hyperref[EC:0008]{EC0008}-\hyperref[EC:0011]{EC0011}-DEP
+\end{itemize}
+
+\subsection{Relaciones de variante}
+No existen relaciones de variante en estos momentos.
+
+\subsection{Relaciones de composición}
+No existen relaciones de composición en estos momentos.
+
+
+
+
+\section{Definición de las líneas base actuales}
+\par Por último, definimos las líneas base que se han creado hasta el momento. Éstas líneas base pueden estar ya finalizadas o que todavía queden elementos de configuración por
+incluirse. Es decir, a medida que se vayan incluyendo elementos de configuración en el apartado primero de este anexo se tendrán que ir incluyendo en las líneas base correspondientes. Dichas líneas base puede que ya estén creadas o puede que haya que crear
+una nueva. Las líneas base generadas hasta el momento son las reflejadas en las tablas \ref{tab:baseLineDocAct} y \ref{tab:baseLineReqAct}.
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{ r l | r l }
+\hline
+\textbf{Nombre:} & \multicolumn{3}{p{10cm}}{Linea base de Documentación} \\
+\textbf{Descripción:} & \multicolumn{3}{p{10cm}}{Línea base de la documentación perteneciente a la aplicación de Métrica 3 \cite{WEB:Metrica3}.} \\ \hline \hline
+\textbf{Estado:} & Abierta & \textbf{Fecha de creación:} & 05/02/2017 \\ \hline
+\textbf{\hyperref[EC:0004]{EC0004}} & Documento de Oferta 2 & \textbf{\hyperref[EC:0005]{EC0005}} & Documento de control de costes 2 \\
+\textbf{\hyperref[EC:0006]{EC0006}} & Estudio de la Viabilidad del Sistema 2 & \textbf{\hyperref[EC:0007]{EC0007}} & Plan de Calidad \\
+\textbf{\hyperref[EC:0015]{EC0015}} & Plan de Gestión de la Configuración & \\
+\hline
+\end{tabular}
+\caption{Línea Base Documentación actual.}
+\label{tab:baseLineDocAct}
+\end{center}
+\end{table}
+
+
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{ r l | r l }
+\hline
+\textbf{Nombre:} & \multicolumn{3}{p{10cm}}{Línea Base Planificación y Especificación de requisitos actual} \\
+\textbf{Descripción:} & \multicolumn{3}{p{10cm}}{Elementos de configuración pertenecientes a la fase de planificación y especificación de requisitos de la metodología Craig-Larman \cite{ART:CraigLarman}.} \\ \hline \hline
+\textbf{Estado:} & Abierta & \textbf{Fecha de creación:} & 27/03/2017 \\ \hline
+\textbf{\hyperref[EC:0009]{EC0009}} & Diagrama de casos de uso & \textbf{\hyperref[EC:0008]{EC0008}} & Casos de uso de alto nivel \\
+\textbf{\hyperref[EC:0010]{EC0010}} & Matriz de trazabilidad & \textbf{\hyperref[EC:0011]{EC0011}} & Priorización de casos de uso \\
+\textbf{\hyperref[EC:0012]{EC0012}} & Estimación & \textbf{\hyperref[EC:0013]{EC0013}} & Planificación y seguimiento \\
+\hline
+\end{tabular}
+\caption{Línea Base Planificación y Especificación de requisitos actual.}
+\label{tab:baseLineReqAct}
+\end{center}
+\end{table}

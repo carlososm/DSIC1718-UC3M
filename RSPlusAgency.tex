@@ -1,0 +1,44 @@
+\documentclass[10pt,a4paper,oldfontcommands]{plantillaDSIC}
+
+\makepage{./img/small_logo.png}
+\pagestyle{myruled}
+
+
+% DOCUMENT
+\begin{document}
+\pagecolor{fondo}
+\color{principal}
+
+\include{portada}
+\tableofcontents
+
+
+\include{intro}
+\include{object}
+\include{back}
+\include{actual_sit}
+\include{rules_ref}
+% Add rules_ref/bib
+\include{req/user_req}
+\include{scope}
+\include{constraints}
+\include{alt_viability}
+\include{solution}
+\include{risk}
+% Add annex
+\include{project_manag}
+\include{temporal_planif}
+\include{budget_sum}
+\include{system_espe}
+\include{budget}
+
+
+% \listoffigures
+% \listoftables
+% \nocite{WEB:Metrica3}
+% \nocite{IMPRO:IEEE830}
+% \nocite{ART:CraigLarman}
+% \bibliography{bib}
+% \bibliographystyle{ieeetr}
+
+\end{document}

@@ -16,6 +16,19 @@ Documentos contenidos:
 + Entrega 1: compilar "E1_RSPA.tex" con pdftex y bibtex
 + Entrega 2: compilar "RSPlusAgency.tex" con pdftex y bibtex (E2 == Proyecto completo)
 
+Comandos básicos:
+----------------
+```
+\section{Nombre de la sección}
+\subsection{Nombre de la subsección}
+\par Párrafo
+\textbf{texto en negrita}
+\textit{texto en itálicas}
+\textbf{\textit{texto en negrita e itálicas}}
+\ref{ref:referencia}
+\cite{itemBibliografía}
+```
+
 Listado de símbolos:
 --------------------
 ```
@@ -115,6 +128,6 @@ Introducir imágenes:
 \caption{Nombre del gráfico/imagen}
 \label{img:imagen}
 \end{figure}
-'''
+```
 
 cambiando la ruta de la imagen y el tamaño en % del ancho

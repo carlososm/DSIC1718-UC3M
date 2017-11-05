@@ -1,1 +1,327 @@
 \section{Requisitos software}
+
+\par A continuación se va a proceder a explicar en detalle cada uno de los requisitos que se han identificado y que por tanto deberán ser satisfechos por el sistema. Para seguir un formato unificado para todos los requisitos, se ha decidido utilizar la siguiente plantilla:
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{7cm}}
+\multicolumn{2}{c}{\textbf{Requisito: XX-YY} } \\
+\hline \hline
+\textbf{Nombre del Requisito} &   \\
+\hline
+\textbf{Descripción} &  \\
+\hline
+\textbf{Tipo} &  \\
+\hline
+\textbf{Fuente del Requisito} &   \\
+\hline
+\textbf{Prioridad} &   \\ \hline
+\end{tabular}
+\caption{Plantilla de requisitos}
+\label{tab:Plantilla-Requisitos}
+\end{center}
+\end{table}
+
+\par En esta tabla se detallan los siguientes apartados:
+\begin{description}[style=multiline, leftmargin=4cm]
+\item[\textbf{Requisito XX-YY:}] El código asignado a cada uno de los requisitos será una sigla correspondiente al tipo de requisito. Por lo tanto puede haber: RF (Requisito Funcional), RNF (Requisito No Funcional) y RI (Requisito de Interfaz). Las dos cifras siguientes corresponderán al numero de requisito dentro de cada uno de los apartados.
+\item[\textbf{Nombre del Requisito:}] Se especificará un nombre para el requisito que lo identifique unívocamente.
+\item[\textbf{Descripción:}] Se realizará una descripción detallada y concisa del requisito en sí.
+\item[\textbf{Tipo:}] Los Requisitos Funcionales y los Requisitos de Interfaz se clasificarán como de tipo requisito, mientras que los Requisitos No Funcionales se clasificarán como de tipo restricción.
+\item[\textbf{Fuente del Requisito:}] En este punto se especificará la fuente del requisito, pudiendo ser del cliente o como el resultado del analisis del proyecto por parte del analista.
+\item[\textbf{Prioridad:}] La prioridad de un requisito se varía según sea un requisito cuya fuente ha sido el cliente y es una parte esencial que este ultimo comprobará, o bien, si es un requisito opcional que estaría bien su implementación pero no es necesario para el éxito del proyecto.
+\end{description}
+
+\subsection{Requisitos funcionales}
+
+\subsection{Requisitos para los clientes}
+
+\par A continuación se indican los requisitos que IRMASpace debe satisfacer de cara a los clientes de la inmobiliaria que integrará el sistema. Estos clientes son usuarios no registrados del portal corporativo.
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{7cm}}
+\multicolumn{2}{c}{\textbf{Requisito: RF-01} } \\
+\hline \hline
+\textbf{Nombre del Requisito} &  Muestra de espacios \\
+\hline
+\textbf{Descripción} & El sistema mostrará todos los otros espacios que estén publicados en alquiler y venta a los usuarios no registrados (clientes) mostrando la información de cada uno de los mismos.\\
+\hline
+\textbf{Tipo} & Requisito  \\
+\hline
+\textbf{Fuente del Requisito} &  Cliente \\
+\hline
+\textbf{Prioridad} &  Media/Alta \\ \hline
+\end{tabular}
+\caption{RF-01: Muestra de espacios}
+\label{tab:RF-01}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{7cm}}
+\multicolumn{2}{c}{\textbf{Requisito: RF-02} } \\
+\hline \hline
+\textbf{Nombre del Requisito} &  Búsqueda de espacios \\
+\hline
+\textbf{Descripción} & El sistema permitirá a los usuarios no registrados (clientes) realizar búsquedas de los otros espacios publicados mediante el uso de un buscador y de distintos filtros. \\
+\hline
+\textbf{Tipo} & Requisito  \\
+\hline
+\textbf{Fuente del Requisito} &  Analista \\
+\hline
+\textbf{Prioridad} &  Baja/Media \\ \hline
+\end{tabular}
+\caption{RF-02: Búsqueda de espacios}
+\label{tab:RF-02}
+\end{center}
+
+\subsection{Requisitos corporativos}
+
+\par A continuación se indican los requisitos que IRMASpace debe satisfacer de cara a los comerciales, coordinadores de área y trabajadores de la inmobiliaria usuarios del sistema. Cada uno de ellos estará registrado en el mismo con un rol.
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{7cm}}
+\multicolumn{2}{c}{\textbf{Requisito: RF-03} } \\
+\hline \hline
+\textbf{Nombre del Requisito} & Dar de alta nuevos espacios  \\
+\hline
+\textbf{Descripción} & El sistema permitirá a los comerciales dar de alta en el sistema información de los otros espacios que estén en alquiler y venta, incluyendo en los mismos todos los datos necesarios. Además se deberá incluir la fecha en la que el nuevo espacio puede ser visible por los clientes y la fecha en la que este dejará de ser visible.\\
+\hline
+\textbf{Tipo} & Requisito  \\
+\hline
+\textbf{Fuente del Requisito} & Cliente \\
+\hline
+\textbf{Prioridad} &  Alta \\ \hline
+\end{tabular}
+\caption{RF-03: Dar de alta nuevos espacios}
+\label{tab:RF-03}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{7cm}}
+\multicolumn{2}{c}{\textbf{Requisito: RF-04} } \\
+\hline \hline
+\textbf{Nombre del Requisito} & Información de los espacios \\
+\hline
+\textbf{Descripción} & Los nuevos espacios introducidos contarán con la siguiente información: foto del espacio, tipo de espacio, tamaño del espacio, localización del espacio, régimen (alquiler o venta), estado (publicado o no, vendido o no), descripción del espacio y otra información relevante.\\
+\hline
+\textbf{Tipo} & Requisito  \\
+\hline
+\textbf{Fuente del Requisito} & Cliente \\
+\hline
+\textbf{Prioridad} &  Alta \\ \hline
+\end{tabular}
+\caption{RF-04: Información de los espacios}
+\label{tab:RF-04}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{7cm}}
+\multicolumn{2}{c}{\textbf{Requisito: RF-05} } \\
+\hline \hline
+\textbf{Nombre del Requisito} & Aceptación de publicación  \\
+\hline
+\textbf{Descripción} & El sistema permitirá coordinadores de área dar el visto bueno a los nuevos espacios incluidos por los comerciales. \\
+\hline
+\textbf{Tipo} & Requisito  \\
+\hline
+\textbf{Fuente del Requisito} & Cliente  \\
+\hline
+\textbf{Prioridad} &  Media/Alta \\ \hline
+\end{tabular}
+\caption{RF-05: Aceptación de la publicación}
+\label{tab:RF-05}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{7cm}}
+\multicolumn{2}{c}{\textbf{Requisito: RF-06} } \\
+\hline \hline
+\textbf{Nombre del Requisito} & Publicación  \\
+\hline
+\textbf{Descripción} & El sistema permitirá publicar los nuevos espacios dados de alta a partir de la fecha indicada por los comerciales, siempre y cuando el coordinador de área haya dado el visto bueno a la publicación y no se haya alcanzado la fecha de fin de visualización. \\
+\hline
+\textbf{Tipo} & Requisito  \\
+\hline
+\textbf{Fuente del Requisito} & Cliente  \\
+\hline
+\textbf{Prioridad} & Media/Alta  \\ \hline
+\end{tabular}
+\caption{RF-06: Publicación}
+\label{tab:RF-06}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{7cm}}
+\multicolumn{2}{c}{\textbf{Requisito: RF-07} } \\
+\hline \hline
+\textbf{Nombre del Requisito} & Realizar alquiler/venta  \\
+\hline
+\textbf{Descripción} & El sistema permitirá a los comerciales realizar el alquilar o la venta de estos otros espacios cuando un cliente lo solicite (alquile o compre uno de estos espacios). \\
+\hline
+\textbf{Tipo} & Requisito  \\
+\hline
+\textbf{Fuente del Requisito} &  Cliente \\
+\hline
+\textbf{Prioridad} & Alta \\ \hline
+\end{tabular}
+\caption{RF-07: Realizar alquiler/venta}
+\label{tab:RF-07}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{7cm}}
+\multicolumn{2}{c}{\textbf{Requisito: RF-08} } \\
+\hline \hline
+\textbf{Nombre del Requisito} & Quitar publicación por venta/alquiler  \\
+\hline
+\textbf{Descripción} & El sistema deberá quitar de publicación (dejar como no visibles) aquellos espacios que hayan sido alquilados o comprados previamente por un cliente.\\
+\hline
+\textbf{Tipo} & Requisito  \\
+\hline
+\textbf{Fuente del Requisito} &  Analista \\
+\hline
+\textbf{Prioridad} & Alta  \\ \hline
+\end{tabular}
+\caption{RF-08: Quitar publicación por venta/alquiler}
+\label{tab:RF-08}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{7cm}}
+\multicolumn{2}{c}{\textbf{Requisito: RF-09} } \\
+\hline \hline
+\textbf{Nombre del Requisito} &  Cambio de estado a vendido \\
+\hline
+\textbf{Descripción} & Cuando un espacio sea vendido a un cliente, el sistema deberá indicar que dicho espacio ya no está gestionado por la inmobiliaria.\\
+\hline
+\textbf{Tipo} & Requisito  \\
+\hline
+\textbf{Fuente del Requisito} & Analista \\
+\hline
+\textbf{Prioridad} &  Media/Alta \\ \hline
+\end{tabular}
+\caption{RF-09: Cambio de estado a vendido}
+\label{tab:RF-09}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{7cm}}
+\multicolumn{2}{c}{\textbf{Requisito: RF-10} } \\
+\hline \hline
+\textbf{Nombre del Requisito} &  Quitar publicación por fin de fecha \\
+\hline
+\textbf{Descripción} & El sistema deberá quitar de publicación (dejar como no visibles) aquellos espacios cuya fecha de fin de visualización se haya alcanzado.\\
+\hline
+\textbf{Tipo} & Requisito  \\
+\hline
+\textbf{Fuente del Requisito} & Cliente  \\
+\hline
+\textbf{Prioridad} &  Media/Alta \\ \hline
+\end{tabular}
+\caption{RF-10: Quitar publicación por fin de fecha}
+\label{tab:RF-10}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{7cm}}
+\multicolumn{2}{c}{\textbf{Requisito: RF-11} } \\
+\hline \hline
+\textbf{Nombre del Requisito} &  Borrado de espacios \\
+\hline
+\textbf{Descripción} & El sistema deberá permitir el borrado (dar de baja) de aquellos espacios que la agencia inmobiliaria ya no gestione.\\
+\hline
+\textbf{Tipo} & Requisito  \\
+\hline
+\textbf{Fuente del Requisito} & Media  \\
+\hline
+\textbf{Prioridad} &  Analista \\ \hline
+\end{tabular}
+\caption{RF-11: Borrado de espacios}
+\label{tab:RF-11}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{7cm}}
+\multicolumn{2}{c}{\textbf{Requisito: RF-12} } \\
+\hline \hline
+\textbf{Nombre del Requisito} &  Modificación de información \\
+\hline
+\textbf{Descripción} & El sistema deberá permitir que los comerciales y los coordinadores de área modifiquen la información de un espacio en venta o alquiler. \\
+\hline
+\textbf{Tipo} & Requisito  \\
+\hline
+\textbf{Fuente del Requisito} &  Cliente \\
+\hline
+\textbf{Prioridad} &  Media \\ \hline
+\end{tabular}
+\caption{RF-12: Modificación de la infromación}
+\label{tab:RF-12}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{7cm}}
+\multicolumn{2}{c}{\textbf{Requisito: RF-13} } \\
+\hline \hline
+\textbf{Nombre del Requisito} &  Roles \\
+\hline
+\textbf{Descripción} & El sistema deberá ser capaz de crear distintos roles para los comerciales, los coordinadores de áreas (etc) y asociarlos a quien corresponda. \\
+\hline
+\textbf{Tipo} & Requisito  \\
+\hline
+\textbf{Fuente del Requisito} & Cliente  \\
+\hline
+\textbf{Prioridad} & Media/Alta  \\ \hline
+\end{tabular}
+\caption{RF-13: Roles}
+\label{tab:RF13}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{7cm}}
+\multicolumn{2}{c}{\textbf{Requisito: RF-14} } \\
+\hline \hline
+\textbf{Nombre del Requisito} & Intercambio de información  \\
+\hline
+\textbf{Descripción} & El sistema deberá permitir que los comerciales y los coordinadores de área se intercambien información y mensajes entre ellos evitando que los mismos pueden ser vistos por gente de fuera del área. \\
+\hline
+\textbf{Tipo} & Requisito  \\
+\hline
+\textbf{Fuente del Requisito} & Cliente  \\
+\hline
+\textbf{Prioridad} & Media  \\ \hline
+\end{tabular}
+\caption{RF-14: Intercambio de información}
+\label{tab:RF-14}
+\end{center}
+\end{table}
+
+
+
+
+\subsection{Requisitos no funcionales}
+\subsection{Requisitos DE interfaz}

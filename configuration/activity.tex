@@ -1,0 +1,97 @@
+\subsection{Actividades del plan de configuración}
+
+\subsubsection{Jerarquía preliminar del producto}
+
+\subsubsection{Selección de los elementos de la configuración}
+\par En este apartado se identifican los Elementos de Configuración (EC). Éstos son las unidades que se deben poder definir y controlar de forma separada e independiente unos de otros. Así, se corresponden en este proyecto con los productos de las tareas de la metodología de Craig Larman \cite{ART:CraigLarman} y , de forma complementaría, de Métrica3 \cite{WEB:Metrica3}.
+\par Pueden verse en la tabla \ref{tab:EC}, en la que se indica el nombre del EC identificado.
+
+
+\begin{center}
+\begin{longtable}{l}
+
+%HEAD
+\textbf{NOMBRE} \\\hline \hline
+\endfirsthead
+\textbf{NOMBRE} \\\hline \hline
+\endhead
+
+%FOOT
+\hline \multicolumn{1}{r}{\textit{Continúa en la siguiente página}} \\
+\endfoot
+\endlastfoot
+
+%table
+Presupuesto del proyecto\\
+Estudio de Viabilidad del Sistema\\
+Plan de Gestión de la Configuración\\
+Plan de Calidad\\
+Análisis del sistema\\
+Diseño del sistema\\
+Estimación\\
+Planificación y seguimiento\\
+Estándar de implementación\\
+Ejecutable de implementación\\
+Reporte de pruebas\\
+Presentación del sistema\\\hline
+
+\caption{Elementos de Configuración.}\\
+\label{tab:EC}
+\end{longtable}
+\end{center}
+
+\subsubsection{Selección del esquema de identificación}
+\par Tras la identificación de los ECs del apartado anterior, es necesario escoger un esquema de identificación para poder referencialos a lo largo tanto del presente documento como del proyecto.
+\par Para ello, hemos decidido usar una identificación no significativa. Los motivos para esta elección se fundamenten en dos aspectos básicos: por un lado, la fácil asignación de código identificativo; en segundo lugar, el uso de un medio electrónico para el desarrollo del proyecto, lo que suple el déficit de la identificación de identificativa. Mediante el uso de hipervínculo se puede referenciar cada uno de los EC a pesar de que su nombre no sea identificativo.
+\par Por ello, cada uno de los EC seleccionados en el apartado anterior, sus variantes y versiones serán identificados mediante cuatro dígitos antecedidos por las letras EC.
+
+\par Por otro lado, la descripción de los elementos de configuración constará del código identificativo, el nombre del EC, su descripción, la iteración en la que surgió o fue identificado, la fecha de creación y el código identificativo de la línea base. Puede verse un ejemplo de esta tabla descriptiva en la tabla \ref{tab:ECdescription}.
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{ r l | r l }
+  \hline
+\textbf{Código Identificativo:} & Código & \textbf{Nombre:} & Nombre del EC \\
+\textbf{Iteración:} & Iteración & \textbf{Fecha de creación:} & dd/mm/aaaa \\ \hline \hline
+\textbf{Descripción:} & \multicolumn{3}{l}{Descripción del EC} \\
+\textbf{Línea base:} & \multicolumn{3}{l}{Línea base del EC} \\
+\hline
+\end{tabular}
+\caption{Ejemplo de la Descripción de un EC.}
+\label{tab:ECdescription}
+\end{center}
+\end{table}
+
+\subsubsection{Definición y establecimiento de las líneas base}
+\par En este apartado se recogen las diferentes líneas base del proyecto. Como se puede ver en la tabla \ref{tab:baseLine} para cada una de ellas recogemos su nombre, su descripción, su estado (que será o bien \textit{abierta} o bien \textit{cerrada}), la fecha y los identificadores de los EC que la componen.
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{ r l | r l }
+\hline
+\textbf{Nombre:} & \multicolumn{3}{l}{Nombre de la línea base} \\
+\textbf{Descripción:} & \multicolumn{3}{l}{Descripción de la línea base} \\ \hline \hline
+\textbf{Estado:} & Abierta/Cerrada & \textbf{Fecha de creación:} & dd/mm/aaaa \\
+\textbf{EC1} & Identificador EC1 & \textbf{EC2} & Identificador EC2 \\
+\textbf{EC3} & Identificador EC3 & \textbf{ECn} & Identificador ECn \\
+\hline
+\end{tabular}
+\caption{Ejemplo de una Línea Base.}
+\label{tab:baseLine}
+\end{center}
+\end{table}
+
+\par Las líneas base definidas en este proyecto son:
+\begin{itemize}[-]
+  \item Fase de Documentación
+  \item Fase de Planificación y gestión del proyecto
+  \item Fase de Análisis del sistema
+  \item Fase de Diseño del sistema
+  \item Fase de Implementación y desarrollo
+  \item Fase de Pruebas
+  \item Fase de Implantación
+\end{itemize}
+
+
+\subsubsection{Definición y establecimiento de las bibliotecas software}
+\subsubsection{Estándar de nombrado de la codificación}

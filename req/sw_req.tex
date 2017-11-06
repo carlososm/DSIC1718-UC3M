@@ -75,8 +75,9 @@
 \caption{RF-02: Búsqueda de espacios}
 \label{tab:RF-02}
 \end{center}
+\end{table}
 
-\subsection{Requisitos corporativos}
+\subsubsection{Requisitos corporativos}
 
 \par A continuación se indican los requisitos que IRMASpace debe satisfacer de cara a los comerciales, coordinadores de área y trabajadores de la inmobiliaria usuarios del sistema. Cada uno de ellos estará registrado en el mismo con un rol.
 
@@ -107,7 +108,7 @@
 \hline \hline
 \textbf{Nombre del Requisito} & Información de los espacios \\
 \hline
-\textbf{Descripción} & Los nuevos espacios introducidos contarán con la siguiente información: foto del espacio, tipo de espacio, tamaño del espacio, localización del espacio, régimen (alquiler o venta), estado (publicado o no, vendido o no), descripción del espacio y otra información relevante.\\
+\textbf{Descripción} & Los nuevos espacios introducidos contarán con la siguiente información: foto del espacio, tipo de espacio, tamaño del espacio, localización del espacio, régimen (alquiler o venta), estado (publicado o no, vendido o no, alquilado o no), descripción del espacio y otra información relevante.\\
 \hline
 \textbf{Tipo} & Requisito  \\
 \hline
@@ -323,5 +324,227 @@
 
 
 
-\subsection{Requisitos no funcionales}
-\subsection{Requisitos DE interfaz}
+\subsubsection{Requisitos no funcionales}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{7cm}}
+\multicolumn{2}{c}{\textbf{Requisito: RFN-01} } \\
+\hline \hline
+\textbf{Nombre del Requisito} & Soporte  \\
+\hline
+\textbf{Descripción} & El sistema deberá ser capaz de ser utilizado por clientes, compradores, comerciales, trabajadores y coordinadores de área al mismo tiempo satisfaciendo las necesidades de cada uno. \\
+\hline
+\textbf{Tipo} & Restricción \\
+\hline
+\textbf{Fuente del Requisito} &  Analista \\
+\hline
+\textbf{Prioridad} &  Media/Deseada \\ \hline
+\end{tabular}
+\caption{RNF-01: Soporte}
+\label{tab:RFN-01}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{7cm}}
+\multicolumn{2}{c}{\textbf{Requisito: RFN-02} } \\
+\hline \hline
+\textbf{Nombre del Requisito} & Cifrado de la información  \\
+\hline
+\textbf{Descripción} & Toda la información personal de los usuarios deberá ser cifrada con RSA-256.\\
+\hline
+\textbf{Tipo} & Restricción \\
+\hline
+\textbf{Fuente del Requisito} &  Analista \\
+\hline
+\textbf{Prioridad} &  Media/Deseada \\ \hline
+\end{tabular}
+\caption{RNF-02: Cifrado de la información}
+\label{tab:RFN-02}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{7cm}}
+\multicolumn{2}{c}{\textbf{Requisito: RFN-03} } \\
+\hline \hline
+\textbf{Nombre del Requisito} & Seguridad de los datos  \\
+\hline
+\textbf{Descripción} & Todos los datos de los espacios deberá ser privados y sólo el personal autorizado (comerciales, coordinadores, etc) deberá poder acceder a la misma. \\
+\hline
+\textbf{Tipo} & Restricción \\
+\hline
+\textbf{Fuente del Requisito} &  Analista \\
+\hline
+\textbf{Prioridad} &  Media/Deseada \\ \hline
+\end{tabular}
+\caption{RNF-03: Seguridad de los datos}
+\label{tab:RFN-03}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{7cm}}
+\multicolumn{2}{c}{\textbf{Requisito: RFN-04} } \\
+\hline \hline
+\textbf{Nombre del Requisito} & Disponibilidad  \\
+\hline
+\textbf{Descripción} & El sistema estará disponible, al menos, el 98\% del tiempo. \\
+\hline
+\textbf{Tipo} & Restricción \\
+\hline
+\textbf{Fuente del Requisito} &  Analista \\
+\hline
+\textbf{Prioridad} &  Media/Deseada \\ \hline
+\end{tabular}
+\caption{RNF-04: Disponibilidad}
+\label{tab:RFN-04}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{7cm}}
+\multicolumn{2}{c}{\textbf{Requisito: RFN-05} } \\
+\hline \hline
+\textbf{Nombre del Requisito} &  Registro de fallos \\
+\hline
+\textbf{Descripción} & El sistema guardará un registro con todos los fallos ocurridos para una posterior auditoría.\\
+\hline
+\textbf{Tipo} & Restricción \\
+\hline
+\textbf{Fuente del Requisito} &  Analista \\
+\hline
+\textbf{Prioridad} &  Media/Deseada \\ \hline
+\end{tabular}
+\caption{RNF-05: Registro de fallos}
+\label{tab:RFN-05}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{7cm}}
+\multicolumn{2}{c}{\textbf{Requisito: RFN-06} } \\
+\hline \hline
+\textbf{Nombre del Requisito} &  Idioma \\
+\hline
+\textbf{Descripción} & El sistema estará disponible en todas las lenguas oficiales recogidas en el territorio nacional (España) así como en Inglés, Francés y Alemán. \\
+\hline
+\textbf{Tipo} & Restricción \\
+\hline
+\textbf{Fuente del Requisito} &  Analista \\
+\hline
+\textbf{Prioridad} &  Media/Deseada \\ \hline
+\end{tabular}
+\caption{RNF-06: Idioma}
+\label{tab:RFN-06}
+\end{center}
+\end{table}
+
+
+\subsection{Requisitos de interfaz}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{7cm}}
+\multicolumn{2}{c}{\textbf{Requisito: RI-01} } \\
+\hline \hline
+\textbf{Nombre del Requisito} & Página web  \\
+\hline
+\textbf{Descripción} & El sistema deberá ofrecer una página web responsiva desde la cual el cliente pueda visualizar todos los otros espacios y realizar búsquedas en cumplimiento de \ref{tab:RF-01} y \ref{tab:RF-02}.  \\
+\hline
+\textbf{Tipo} & Interfaz \\
+\hline
+\textbf{Fuente del Requisito} & Cliente  \\
+\hline
+\textbf{Prioridad} & Media  \\ \hline
+\end{tabular}
+\caption{RI-01: Página web}
+\label{tab:RI-01}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{7cm}}
+\multicolumn{2}{c}{\textbf{Requisito: RI-02} } \\
+\hline \hline
+\textbf{Nombre del Requisito} & Registro  \\
+\hline
+\textbf{Descripción} & El sistema deberá ofrecer una interfaz que permita a los trabajadores, comerciales y coordinadores entrar en el portal corporativo \\
+\hline
+\textbf{Tipo} & Interfaz \\
+\hline
+\textbf{Fuente del Requisito} & Analista \\
+\hline
+\textbf{Prioridad} & Media  \\ \hline
+\end{tabular}
+\caption{RI-02: Registro}
+\label{tab:RI-02}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{7cm}}
+\multicolumn{2}{c}{\textbf{Requisito: RI-03} } \\
+\hline \hline
+\textbf{Nombre del Requisito} & Sitio corporativo  \\
+\hline
+\textbf{Descripción} & El sistema deberá ofrecer una página web donde los comerciales, coordinadores, etc. puedan gestionar el contenido de los otros espacios. \\
+\hline
+\textbf{Tipo} & Interfaz \\
+\hline
+\textbf{Fuente del Requisito} & Cliente  \\
+\hline
+\textbf{Prioridad} & Media  \\ \hline
+\end{tabular}
+\caption{RI-03: Sitio corporativo}
+\label{tab:RI-03}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{7cm}}
+\multicolumn{2}{c}{\textbf{Requisito: RI-04} } \\
+\hline \hline
+\textbf{Nombre del Requisito} & Integración  \\
+\hline
+\textbf{Descripción} & La interfaz deberá poder ser integrada con los otros sistemas o subsistemas de la inmobiliaria.  \\
+\hline
+\textbf{Tipo} & Interfaz \\
+\hline
+\textbf{Fuente del Requisito} & Cliente  \\
+\hline
+\textbf{Prioridad} & Media  \\ \hline
+\end{tabular}
+\caption{RI-04: Integración}
+\label{tab:RI-04}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{7cm}}
+\multicolumn{2}{c}{\textbf{Requisito: RI-05} } \\
+\hline \hline
+\textbf{Nombre del Requisito} & Panel de administración  \\
+\hline
+\textbf{Descripción} & El sistema proporcionará un panel de administración desde donde se controlen los roles de los distintos usuarios.  \\
+\hline
+\textbf{Tipo} & Interfaz \\
+\hline
+\textbf{Fuente del Requisito} & Analista  \\
+\hline
+\textbf{Prioridad} & Media  \\ \hline
+\end{tabular}
+\caption{RI-05: Panel de administración}
+\label{tab:RI-05}
+\end{center}
+\end{table}

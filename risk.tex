@@ -1,1 +1,175 @@
-\section{Análisis de riesgos}
+\section{Análisis de riesgos}\label{sec:riesgos}
+\par Para que el proyecto se realice en el tiempo especificado y entregando la máxima calidad posible, es necesario identificar los riesgos que pueden ir lastrando o puedan provocar la cancelación de éste, para así prevenirlos.
+\par En este documento se recogerá una lista de riesgos comunes a este tipo de proyectos, que se irá ampliando en futuras revisiones (ver ~\ref{sec:calidad}) según se descubran nuevos riesgos. Para que sea más legible se han categorizado en:
+
+\begin{itemize}[-]
+\item \textbf{Tamaño del producto:} riesgos que tienen que ver con el tamaño del software.
+\item \textbf{Impacto en el negocio:} riesgos asociados con  la gestión o el mercado.
+\item \textbf{Características del cliente:} riesgos asociados con el cliente y la comunicación entre éste y el desarrollador.
+\item \textbf{Tecnología a construir:} riesgos debidos a la complejidad del sistema a construir y los componentes que lo sostienen.
+\item \textbf{Tamaño y experiencia de la plantilla:} riesgos debidos a la experiencia técnica.
+\end{itemize}
+
+\par Para comprender mejor el riesgo, se han declarado en unas tablas con las siguientes características:
+\begin{itemize}
+	\item \textbf{Coste:} el coste en el proyecto, tanto monetario como en horas de esfuerzo.
+	\item \textbf{Tiempo:} la cantidad de tiempo que podría retrasar el avance del proyecto.
+	\item \textbf{Alcance:} la cantidad de impacto en las áreas del proyecto. Un riesgo que tiene mucho alcance afectará a más áreas que uno que tiene un menor alcance.
+	\item \textbf{Calidad:} cuánto afecta a la calidad final del producto.
+\end{itemize}
+
+\subsection{Tamaño del producto}
+\begin{itemize}
+	\item \textbf{Riesgo-01: subestimar el tamaño del producto}
+	\begin{table}[h]
+	\begin{center}
+	\begin{tabular}{ l l l l l l }
+	\hline
+	& Muy Bajo & Bajo & Moderado & Alto & Muy Alto \\ \hline \hline
+	Coste &  &  &  & X &  \\ \hline
+	Tiempo &  &  &  & X &  \\ \hline
+	Alcance &  &  &  &  & X \\ \hline
+	Calidad &  &  &  &  & X \\ \hline
+	\end{tabular}
+	\caption{Riesgo-01.}
+	\label{Riesgo-01}
+	\end{center}
+	\end{table}
+\end{itemize}
+
+\subsection{Impacto en el negocio}
+\begin{itemize}
+	\item \textbf{Riesgo-02: La documentación del proyecto realizada por el cliente no tiene la suficiente calidad}
+	\begin{table}[H]
+	\begin{center}
+	\begin{tabular}{ l l l l l l }
+	\hline
+	& Muy Bajo & Bajo & Moderado & Alto & Muy Alto \\ \hline \hline
+	Coste &  &  & X &  &  \\ \hline
+	Tiempo &  &  & X &  &  \\ \hline
+	Alcance & X &  &  &  &  \\ \hline
+	Calidad &  &  &  & X &  \\ \hline
+	\end{tabular}
+	\caption{Riesgo-02.}
+	\label{Riesgo-02}
+	\end{center}
+	\end{table}
+	\item \textbf{Riesgo-03: Costes asociados a retrasos}
+	\begin{table}[H]
+	\begin{center}
+	\begin{tabular}{ l l l l l l }
+	\hline
+	& Muy Bajo & Bajo & Moderado & Alto & Muy Alto \\ \hline \hline
+	Coste &  &  & X &  &  \\ \hline
+	Tiempo &  &  &  & X &  \\ \hline
+	Alcance &  &  &  & X &  \\ \hline
+	Calidad &  &  & X &  &  \\ \hline
+	\end{tabular}
+	\caption{Riesgo-03.}
+	\label{Riesgo-03}
+	\end{center}
+	\end{table}
+\end{itemize}
+
+\subsection{Características del cliente}
+\begin{itemize}
+	\item \textbf{Riesgo-04: El cliente no tiene una idea clara del producto}
+	\begin{table}[H]
+	\begin{center}
+	\begin{tabular}{ l l l l l l }
+	\hline
+	& Muy Bajo & Bajo & Moderado & Alto & Muy Alto \\ \hline \hline
+	Coste &  &  &  & X &  \\ \hline
+	Tiempo &  &  &  & X &  \\ \hline
+	Alcance &  & X &  &  &  \\ \hline
+	Calidad &  &  & X &  &  \\ \hline
+	\end{tabular}
+	\caption{Riesgo-04.}
+	\label{Riesgo-04}
+	\end{center}
+	\end{table}
+	\item \textbf{Riesgo-05: El cliente no comprende el proceso de creación del software}
+	\begin{table}[H]
+	\begin{center}
+	\begin{tabular}{ l l l l l l }
+	\hline
+	& Muy Bajo & Bajo & Moderado & Alto & Muy Alto \\ \hline \hline
+	Coste &  &  & X &  &  \\ \hline
+	Tiempo &  &  &  & X &  \\ \hline
+	Alcance &  & X &  &  &  \\ \hline
+	Calidad &  &  & X &  &  \\ \hline
+	\end{tabular}
+	\caption{Riesgo-05.}
+	\label{Riesgo-05}
+	\end{center}
+	\end{table}
+	\item \textbf{Riesgo-06: El cliente no tiene una vía clara y directa para comunicarse con el fabricante}
+	\begin{table}[H]
+	\begin{center}
+	\begin{tabular}{ l l l l l l }
+	\hline
+	& Muy Bajo & Bajo & Moderado & Alto & Muy Alto \\ \hline \hline
+	Coste &  &  & X &  &  \\ \hline
+	Tiempo &  &  &  & & X  \\ \hline
+	Alcance &  & & & X  &  \\ \hline
+	Calidad &  &  & & & X  \\ \hline
+	\end{tabular}
+	\caption{Riesgo-06.}
+	\label{Riesgo-06}
+	\end{center}
+	\end{table}
+\end{itemize}
+
+\subsection{Tecnología a construir}
+\begin{itemize}
+
+	\item \textbf{Riesgo-06: Falta de documentación acerca de la tecnología}
+	\begin{table}[H]
+	\begin{center}
+	\begin{tabular}{ l l l l l l }
+	\hline
+	& Muy Bajo & Bajo & Moderado & Alto & Muy Alto \\ \hline \hline
+	Coste &  &  & X & &  \\ \hline
+	Tiempo &  &  &  &  & X \\ \hline
+	Alcance &  &  & X & &  \\ \hline
+	Calidad &  &  &  & X &  \\ \hline
+	\end{tabular}
+	\caption{Riesgo-06.}
+	\label{Riesgo-06}
+	\end{center}
+	\end{table}
+	\item \textbf{Riesgo-07: Limitaciones de la tecnología a utilizar}
+	\begin{table}[H]
+	\begin{center}
+	\begin{tabular}{ l l l l l l }
+	\hline
+	& Muy Bajo & Bajo & Moderado & Alto & Muy Alto \\ \hline \hline
+	Coste &  &  &  & X &  \\ \hline
+	Tiempo &  &  &  &  & X \\ \hline
+	Alcance &  &  &  & X &  \\ \hline
+	Calidad &  &  &  & X &  \\ \hline
+	\end{tabular}
+	\caption{Riesgo-07.}
+	\label{Riesgo-07}
+	\end{center}
+	\end{table}	
+\end{itemize}
+
+\subsection{Tamaño y experiencia de la plantilla}
+\begin{itemize}
+	\item \textbf{Riesgo-09: Falta de experiencia con la tecnología}
+	\begin{table}[H]
+	\begin{center}
+	\begin{tabular}{ l l l l l l }
+	\hline
+	& Muy Bajo & Bajo & Moderado & Alto & Muy Alto \\ \hline \hline
+	Coste &  &  &  & X &  \\ \hline
+	Tiempo &  &  &  &  & X \\ \hline
+	Alcance &  &  &  & X &  \\ \hline
+	Calidad &  &  &  & X &  \\ \hline
+	\end{tabular}
+	\caption{Riesgo-09.}
+	\label{Riesgo-09}
+	\end{center}
+	\end{table}	
+\end{itemize}

@@ -1,7 +1,5 @@
 \subsection{Actividades del plan de configuración}
 
-\subsubsection{Jerarquía preliminar del producto}
-
 \subsubsection{Selección de los elementos de la configuración}
 \par En este apartado se identifican los Elementos de Configuración (EC). Éstos son las unidades que se deben poder definir y controlar de forma separada e independiente unos de otros. Así, se corresponden en este proyecto con los productos de las tareas de la metodología de Craig Larman \cite{ART:CraigLarman} y , de forma complementaría, de Métrica3 \cite{WEB:Metrica3}.
 \par Pueden verse en la tabla \ref{tab:EC}, en la que se indica el nombre del EC identificado.
@@ -94,4 +92,51 @@ Presentación del sistema\\\hline
 
 
 \subsubsection{Definición y establecimiento de las bibliotecas software}
+∫
+
 \subsubsection{Estándar de nombrado de la codificación}
+\par Para cumplir con los requisitos de integración de IRMASpace con el resto de subsistemas, resulta imprescindible definir como actividad de configuración una guía de nombrado para los distintos elementos software generados.
+\par Para ello, se han identificado los elementos que serán nombrados en función de la solución propuesta en el apartado \ref{sec:solution}. Así, se ha realizado un estándar de nombrado para las páginas, para las estructuras y para los atributos de las mismas.
+
+\begin{itemize}[-]
+  \item Para las páginas, se comenzará el nombre de las mismas con las siglas \textit{oe} (siglas de Otros Espacios). A continuación, se indicará el nombre más descriptivo posible comenzando por mayúscula.
+  \item Tanto para las estructuras como para las variables se utilizará una notación húngara siguiendo el la tabla \ref{tab:notation}, comenzando la notación con \textit{oe}.
+\end{itemize}
+
+\begin{center}
+\begin{longtable}{p{2cm} p{10cm}}
+
+%HEAD
+Prefijo &	Significado \\ \hline \hline
+\endfirsthead
+\endhead
+
+%FOOT
+\hline \multicolumn{2}{r}{\textit{Continúa en la siguiente página}} \\
+\endfoot
+\endlastfoot
+
+%table
+a  &	'array'. Para vectores/matrices/listas de n dimensiones ordenados escalarmente. \\
+b &	'booleano'. Para variables que tomen sólo dos tipos de valores. \\
+c &	'char'. Para el tipo primitivo de carácter alfanumérico individual. \\
+d &	'double'. Para tipos numéricos de alta precisión, como double o float. \\
+e &	'event'. Para eventos. \\
+f &	'función'. Sólo la utilizaremos delante de funciones cuando se traten de funciones que se añadan como observadores de un evento (ya que usar esta notación para cualquier método o función sería bastante engorroso). \\
+g &	'delegated'. Para tipos delegados. \\
+h &	'hashtable'. Colecciones ordenables mediante clave hash (hUsuarios[“juan23”]). \\
+i &	'int'. Para números enteros en general, tanto enteros normales como aquellos tipos enteros de más capacidad (como long). \\
+l &	'lock'. Para objetos de control que nos faciliten el uso de exclusiones mutuas, candados y semáforos. \\
+n &	'enum'. Para tipos enumerados. \\
+o &	'objeto'. Para objetos en general (no se debe usar la notación húngara para distinguir entre tipos de objetos, salvo escasas excepciones). \\
+p &	'puntero'. Para lenguajes con aritmética de punteros. \\
+s &	'string'. Para variables de tipo cadena de texto, ya sean nativos o arrays de chars. Este tipo de datos es muy habitual en lenguajes sin lógica de punteros. Si se usara el objeto de tipo “String” en estos casos, acudiremos a este identificador en lugar de al ‘o’ de objeto. \\
+t &	'struct'. Similar al 'o' de objetos, éste se usaría para variables de tipo struct en general (es decir, objetos de tipo primitivo). \\
+v &	'variable'. Para variables que adquieran diferentes tipos de valores. Normalmente sólo acudiremos a esta opción en lenguajes no tipados (como JavaScript/EcmaScript). La usaremos cuando no estemos seguros del tipo de valor que albergará una variable. También puede valer para objetos que tengan un tipo genérico T. \\
+y &	'byte'. \\
+
+
+\caption{Notación húngara}\\
+\label{tab:notation}
+\end{longtable}
+\end{center}

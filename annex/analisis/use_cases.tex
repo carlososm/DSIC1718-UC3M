@@ -1,1 +1,270 @@
 \section{Casos de uso}
+\subsection{Formato de los Casos de Uso en formato Expandido}
+\par Los Casos de Uso en formato Expandido tendrán el siguiente formato:
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{p{3,5cm} p{11cm}}
+\multicolumn{2}{c}{\textbf{Identificador} } \\ \hline \hline
+\textbf{Nombre} &  \\ \hline
+\textbf{Actores} &  \\ \hline
+\textbf{Descripción} &  \\ \hline
+\textbf{Precondiciones} &  \\ \hline
+\textbf{Postcondiciones del flujo normal} &  \\ \hline
+\textbf{Postcondiciones del flujo alternativo} &  \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\par Siendo cada característica la siguiente:
+\begin{itemize}
+	\item \textbf{Identificador:} identificador del requisito.
+	\item \textbf{Nombre:} nombre descriptivo del caso de uso.
+	\item \textbf{Actores:} actores envueltos en el caso de uso.
+	\item \textbf{Descripción:} descripción detallada del caso de uso.
+	\item \textbf{Precondiciones:} condiciones que se deben cumplir para que ocurra el caso de uso.
+	\item \textbf{Postcondiciones del flujo normal:} condición en la que se queda el sistema tras el uso adecuado.
+	\item \textbf{Postcondiciones del flujo alternativo:} condición en la que se queda el sistema tras un uso alternativo.
+\end{itemize}
+
+\subsection{Casos de uso en formato expandido}
+
+\begin{center}
+\begin{longtable}{p{3,5cm} p{11cm}}
+%HEAD
+\multicolumn{2}{c}{\textbf{CDUE-01} } \\ \hline \hline
+\endfirsthead
+\multicolumn{2}{c}{\textbf{CDUE-01} } \\ \hline \hline
+\endhead
+%table
+\textbf{Nombre} & Darse de alta en el portal \\ \hline
+\textbf{Actores} & usuario y administrador \\ \hline
+\textbf{Descripción} & El usuario se dará de alta en el portal introduciendo su alias, nombre, apellidos, contraseña y correo electrónico. Dependiendo del usuario, es posible que un administrador tenga que validad la alta. \\ \hline
+\textbf{Precondiciones} &  \tabitem Tanto el alias como el correo electrónico no deberán haber sido usados para la creación de ningún otro perfil. Además la contraseña deberá contener 8 caracteres con al menos un número, un caracter especial y una letra mayúscula.\\ \hline
+\textbf{Postcondiciones del flujo normal } & \tabitem El usuario quedará registrado, a menos que requiera la aprobación de un administrador, y se enviará un correo de confirmación. \\ \hline
+\\ \hline
+\textbf{Postcondiciones del flujo alternativo} & \tabitem El usuario no quedará registrado y será notificado. \\ \hline
+\caption{Caso de uso en formato expandido 01}
+\label{tab:CDUE-01}
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{p{3,5cm} p{11cm}}
+%HEAD
+\multicolumn{2}{c}{\textbf{CDUE-02} } \\ \hline \hline
+\endfirsthead
+\multicolumn{2}{c}{\textbf{CDUE-02} } \\ \hline \hline
+\endhead
+%table
+\textbf{Nombre} & Acceder a la sesión \\ \hline
+\textbf{Actores} & usuario \\ \hline
+\textbf{Descripción} & El usuario introducirá su alias o su correo electrónico, así como su contraseña y de ser la combinación correcta, se le permitirá el acceso. \\ \hline
+\textbf{Precondiciones} &  \tabitem El usuario al que se intenta acceder debe estar creado (y validado).\\ \hline
+\textbf{Postcondiciones del flujo normal } & \tabitem Una vez el usuario introduzca la combinación correcta, se le mostrará la página a la que intentaba acceder pero esta vez estará logueado. \\ \hline
+\\ \hline
+\textbf{Postcondiciones del flujo alternativo} & \tabitem Si la combinación es errónea, se le notificará al usuario de que la contraseña es incorrecta y que puede intentarlo otra vez o pedir una nueva contraseña por correo electrónico. Si el servicio está caído y es la causa, se notificará de que se trata de una caída de servicio. \\ \hline
+\caption{Caso de uso en formato expandido 02}
+\label{tab:CDUE-02}
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{p{3,5cm} p{11cm}}
+%HEAD
+\multicolumn{2}{c}{\textbf{CDUE-03} } \\ \hline \hline
+\endfirsthead
+\multicolumn{2}{c}{\textbf{CDUE-03} } \\ \hline \hline
+\endhead
+%table
+\textbf{Nombre} & Darse de baja en el portal \\ \hline
+\textbf{Actores} & usuario / administrador \\ \hline
+\textbf{Descripción} & El usuario accederá a la sección de opciones de su perfil y dará de baja su perfil (en el caso del administrador esto no será necesario), se le pedirá una confirmación, y una vez dado de baja se le notificará por correo electrónico. \\ \hline
+\textbf{Precondiciones} &  \tabitem El usuario deberá existir y estar logueado (en el caso de que el actor sea el usuario).\\ \hline
+\textbf{Postcondiciones del flujo normal } & \tabitem El usuario quedará eliminado y se enviará un correo electrónico con la confirmación al correo asociado a la cuenta. \\ \hline
+\\ \hline
+\textbf{Postcondiciones del flujo alternativo} & \tabitem El usuario no es eliminado. \\ \hline
+\caption{Caso de uso en formato expandido 03}
+\label{tab:CDUE-03}
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{p{3,5cm} p{11cm}}
+%HEAD
+\multicolumn{2}{c}{\textbf{CDUE-04} } \\ \hline \hline
+\endfirsthead
+\multicolumn{2}{c}{\textbf{CDUE-04} } \\ \hline \hline
+\endhead
+%table
+\textbf{Nombre} & Crear un espacio nuevo \\ \hline
+\textbf{Actores} & usuario registrado \\ \hline
+\textbf{Descripción} & El usuario creará un nuevo espacio con los datos necesarios de forma que otros usuarios sean capaces de acceder si lo permite. \\ \hline
+\textbf{Precondiciones} &  \tabitem El usuario debe existir y estar logueado y el espacio no debe existir previamente. El usuario deberá rellenar todos los campos obligatorios para poder crear el espacio.\\ \hline
+\textbf{Postcondiciones del flujo normal } & \tabitem Se creará el nuevo espacio y el usuario será notificado en el acto. \\ \hline
+\\ \hline
+\textbf{Postcondiciones del flujo alternativo} & \tabitem Si no se cumple alguna de las precondiciones el espacio no se creará. \\ \hline
+\caption{Caso de uso en formato expandido 04}
+\label{tab:CDUE-04}
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{p{3,5cm} p{11cm}}
+%HEAD
+\multicolumn{2}{c}{\textbf{CDUE-05} } \\ \hline \hline
+\endfirsthead
+\multicolumn{2}{c}{\textbf{CDUE-05} } \\ \hline \hline
+\endhead
+%table
+\textbf{Nombre} & Mostrar los espacios existentes \\ \hline
+\textbf{Actores} & usuario \\ \hline
+\textbf{Descripción} & El usuario podrá ver los espacios existentes en una lista. \\ \hline
+\textbf{Precondiciones} &  \tabitem El usuario deberá acceder al portal y deberán existir espacios visibles para él.\\ \hline
+\textbf{Postcondiciones del flujo normal } & \tabitem Se mostrarán en un listado los espacios existentes y que sean visibles. \\ \hline
+\\ \hline
+\textbf{Postcondiciones del flujo alternativo} & \tabitem No se mostrarán los espacios. \\ \hline
+\caption{Caso de uso en formato expandido 05}
+\label{tab:CDUE-05}
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{p{3,5cm} p{11cm}}
+%HEAD
+\multicolumn{2}{c}{\textbf{CDUE-06} } \\ \hline \hline
+\endfirsthead
+\multicolumn{2}{c}{\textbf{CDUE-06} } \\ \hline \hline
+\endhead
+%table
+\textbf{Nombre} & Buscar espacios \\ \hline
+\textbf{Actores} & usuario \\ \hline
+\textbf{Descripción} & El usuario podrá buscar un espacio existente en concreto. \\ \hline
+\textbf{Precondiciones} &  \tabitem El usuario deberá acceder al portal y deberá existir el espacio que busca.\\ \hline
+\textbf{Postcondiciones del flujo normal } & \tabitem Se mostrará el espacio. \\ \hline
+\\ \hline
+\textbf{Postcondiciones del flujo alternativo} & \tabitem No se mostrará el espacio. \\ \hline
+\caption{Caso de uso en formato expandido 06}
+\label{tab:CDUE-06}
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{p{3,5cm} p{11cm}}
+%HEAD
+\multicolumn{2}{c}{\textbf{CDUE-07} } \\ \hline \hline
+\endfirsthead
+\multicolumn{2}{c}{\textbf{CDUE-07} } \\ \hline \hline
+\endhead
+%table
+\textbf{Nombre} & Validar aportación \\ \hline
+\textbf{Actores} & administrador \\ \hline
+\textbf{Descripción} & El administrador aprobará la creación de un espacio o no. \\ \hline
+\textbf{Precondiciones} &  \tabitem El administrador deberá estar logueado y tener los permisos necesarios, además de que el espacio debe existir.\\ \hline
+\textbf{Postcondiciones del flujo normal } & \tabitem El espacio quedará (o no) aprobado. \\ \hline
+\\ \hline
+\textbf{Postcondiciones del flujo alternativo} & \tabitem Se notificará al administrador un error con los motivos, ya sea por permisos insuficientes o porque el espacio no exista. \\ \hline
+\caption{Caso de uso en formato expandido 07}
+\label{tab:CDUE-07}
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{p{3,5cm} p{11cm}}
+%HEAD
+\multicolumn{2}{c}{\textbf{CDUE-08} } \\ \hline \hline
+\endfirsthead
+\multicolumn{2}{c}{\textbf{CDUE-08} } \\ \hline \hline
+\endhead
+%table
+\textbf{Nombre} & Publicar aportación \\ \hline
+\textbf{Actores} & administrador \\ \hline
+\textbf{Descripción} & El administrador publicará un espacio o no, durante un periodo definido de tiempo. \\ \hline
+\textbf{Precondiciones} &  \tabitem El administrador deberá estar logueado y tener los permisos necesarios, además de que el espacio debe existir y se le deberá dar un tiempo máximo por el cual quedará publicado.\\ \hline
+\textbf{Postcondiciones del flujo normal } & \tabitem El espacio quedará (o no) publicado. \\ \hline
+\\ \hline
+\textbf{Postcondiciones del flujo alternativo} & \tabitem Se notificará al administrador un error con los motivos, ya sea por permisos insuficientes o porque el espacio no exista. \\ \hline
+\caption{Caso de uso en formato expandido 08}
+\label{tab:CDUE-08}
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{p{3,5cm} p{11cm}}
+%HEAD
+\multicolumn{2}{c}{\textbf{CDUE-09} } \\ \hline \hline
+\endfirsthead
+\multicolumn{2}{c}{\textbf{CDUE-09} } \\ \hline \hline
+\endhead
+%table
+\textbf{Nombre} & Realizar alquiler / venta \\ \hline
+\textbf{Actores} & usuario registrado (comercial) \\ \hline
+\textbf{Descripción} & El usuario registrado (comercial) alquilará o venderá un espacio cuando un cliente lo solicite. \\ \hline
+\textbf{Precondiciones} &  \tabitem El usuario registrado (comercial) deberá estar logueado y tener los permisos necesarios, además de que el espacio debe existir.\\ \hline
+\textbf{Postcondiciones del flujo normal } & \tabitem El espacio quedará alquilado o vendido. \\ \hline
+\\ \hline
+\textbf{Postcondiciones del flujo alternativo} & \tabitem Se notificará al usuario registrado (comercial) un error con los motivos, ya sea por permisos insuficientes o porque el espacio no exista o ya esté alquilado / vendido. \\ \hline
+\caption{Caso de uso en formato expandido 09}
+\label{tab:CDUE-09}
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{p{3,5cm} p{11cm}}
+%HEAD
+\multicolumn{2}{c}{\textbf{CDUE-10} } \\ \hline \hline
+\endfirsthead
+\multicolumn{2}{c}{\textbf{CDUE-10} } \\ \hline \hline
+\endhead
+%table
+\textbf{Nombre} & Eliminar alquiler / venta \\ \hline
+\textbf{Actores} & usuario registrado (comercial) \\ \hline
+\textbf{Descripción} & El usuario registrado (comercial) eliminará el alquiler o venta de un espacio cuando un cliente lo solicite. \\ \hline
+\textbf{Precondiciones} &  \tabitem El usuario registrado (comercial) deberá estar logueado y tener los permisos necesarios, además de que el espacio debe existir y estar alquilado / vendido.\\ \hline
+\textbf{Postcondiciones del flujo normal } & \tabitem El espacio alquilado o vendido dejará de estarlo. \\ \hline
+\\ \hline
+\textbf{Postcondiciones del flujo alternativo} & \tabitem Se notificará al usuario registrado (comercial) un error con los motivos, ya sea por permisos insuficientes o porque el espacio no exista, o no esté alquilado o vendido. \\ \hline
+\caption{Caso de uso en formato expandido 10}
+\label{tab:CDUE-10}
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{p{3,5cm} p{11cm}}
+%HEAD
+\multicolumn{2}{c}{\textbf{CDUE-11} } \\ \hline \hline
+\endfirsthead
+\multicolumn{2}{c}{\textbf{CDUE-11} } \\ \hline \hline
+\endhead
+%table
+\textbf{Nombre} & Eliminar un espacio \\ \hline
+\textbf{Actores} & administrador \\ \hline
+\textbf{Descripción} & El administrador podrá eliminar un espacio, siempre que éste exista y el administrador tenga los permisos necesarios. \\ \hline
+\textbf{Precondiciones} &  \tabitem El administrador deberá estar logueado y tener los permisos necesarios, además de que el espacio debe existir.\\ \hline
+\textbf{Postcondiciones del flujo normal } & \tabitem El espacio quedará eliminado. \\ \hline
+\\ \hline
+\textbf{Postcondiciones del flujo alternativo} & \tabitem Se notificará al administrador un error con los motivos, ya sea por permisos insuficientes o porque el espacio no exista (de forma previa). \\ \hline
+\caption{Caso de uso en formato expandido 11}
+\label{tab:CDUE-11}
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{p{3,5cm} p{11cm}}
+%HEAD
+\multicolumn{2}{c}{\textbf{CDUE-12} } \\ \hline \hline
+\endfirsthead
+\multicolumn{2}{c}{\textbf{CDUE-12} } \\ \hline \hline
+\endhead
+%table
+\textbf{Nombre} & Eliminar un espacio \\ \hline
+\textbf{Actores} & usuario registrado (comercial) \\ \hline
+\textbf{Descripción} & El usuario registrado (comercial) podrá modificar la información de un espacio, siempre que éste exista y el comercial tenga los permisos necesarios. \\ \hline
+\textbf{Precondiciones} &  \tabitem El usuario registrado (comercial) deberá estar logueado y tener los permisos necesarios, además de que el espacio debe existir.\\ \hline
+\textbf{Postcondiciones del flujo normal } & \tabitem La información del espacio quedará modificada. \\ \hline
+\\ \hline
+\textbf{Postcondiciones del flujo alternativo} & \tabitem Se notificará al comercial un error con los motivos, ya sea por permisos insuficientes o porque el espacio no exista. \\ \hline
+\caption{Caso de uso en formato expandido 12}
+\label{tab:CDUE-12}
+\end{longtable}
+\end{center}

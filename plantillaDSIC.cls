@@ -54,7 +54,8 @@ bookmarks=true,bookmarksopenlevel=2]{hyperref}
 \definecolor{gray75}{gray}{.75}
 \definecolor{gray45}{gray}{.45}
 
-\RequierePackage{listings}
+\RequirePackage{listings}
+
 \lstset{ frame=Ltb,
      framerule=0pt,
      aboveskip=0.5cm,
@@ -91,6 +92,8 @@ bookmarks=true,bookmarksopenlevel=2]{hyperref}
 \lstdefinestyle{C}
    {language=C,
    }
+
+
 
 
 

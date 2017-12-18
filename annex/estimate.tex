@@ -95,7 +95,7 @@ Ver espacios venta & 1 & 1 & 9 & 1 Baja\\
 \begin{table}[h]
 \begin{center}
 \begin{tabular}{ l c c c c }
-& \textbf{Complejidad} & \textbf{Peso} & \textbf{Numero} & \textbf{Total} & \textbf{Complejidad} \\
+& \textbf{Peso} & \textbf{Numero} & \textbf{Total} & \textbf{Complejidad} \\
 ILF & Baja & 7 & 1 & 7 \\
 EI & Baja & 3 & 2 & 6 \\
 EQ & Baja & 3 & 2 & 6 \\ \hline
@@ -312,12 +312,12 @@ Alto &
 \end{center}
 \end{table}
 
-\par Aplicando los resultados a la ecuación \ref{eqn:ajustado}, obtenemos que $}MM_{ajustado} = 2.99 * 0.48 =  1.44$.
+\par Aplicando los resultados a la ecuación \ref{eqn:ajustado}, obtenemos que $MM_{ajustado} = 2.99 * 0.48 =  1.44$.
 
 \begin{equation} \label{eqn:ajustado}MM_{ajustado} = MM_{nominal}*(\prod_{i=0}^{17}EM_{i})\end{equation}
 
 
-\par Finalmente, aplicando la ecuación \ref{eqn:TDEV}, obtenemos $ $. Por lo tanto, se necesitan $TEDV=[3.67*(1.44)^{0.28+0.2*(1.048-1.01)}]*(\%SCED/100)=4076meses/persona$. Como RSPlus cuenta con 3 trabajadores, el tiempo de desarrollo estimado es de $1.36 meses $.
+\par Finalmente, aplicando la ecuación \ref{eqn:tdev}, obtenemos $ $. Por lo tanto, se necesitan $TEDV=[3.67*(1.44)^{0.28+0.2*(1.048-1.01)}]*(\%SCED/100)=4076meses/persona$. Como RSPlus cuenta con 3 trabajadores, el tiempo de desarrollo estimado es de $1.36 meses $.
 
 \begin{equation} \label{eqn:tdev}
 TDEV = [3.67*(MM_{ajustado})^{0.28+0.2*(B-1.01)}]*(\%SCED/100)

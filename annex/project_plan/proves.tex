@@ -1,0 +1,145 @@
+\chapter{Plan de pruebas}
+\par A continuación, se presenta el plan de pruebas, que está basado en los requisitos de usuario (ver sección Requisitos de Software).
+
+\section{Formato de especificación de pruebas}
+\par Las pruebas quedarán especificadas siguiendo el esquema dela tabla \ref{tab:provesFormat}
+
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{ l l }
+\multicolumn{2}{c}{Id de la prueba} \\ \hline
+\textbf{Nombre de la Prueba} & Nombre \\
+\textbf{Descripción} & Descripción \\
+\textbf{Resultado esperado} & Resultado esperado \\
+\textbf{Resultado no esperado} & Caso de error \\
+\textbf{Requisitos asociados} & RF/RNF-XX \\ \hline
+\end{tabular}
+\caption{Formato de la especificación de pruebas.}
+\label{tab:provesFormat}
+\end{center}
+\end{table}
+
+
+
+\section{Relación de pruebas}
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{ l l }
+\multicolumn{2}{c}{Prueba P-01} \\ \hline
+\textbf{Nombre de la Prueba} & Mostrar espacios \\
+\textbf{Descripción} & Accediendo al portal, y navegando a las secciones correspondientes de venta o alquiler, se visualizarán los espacios que estén publicados hasta la fecha. \\
+\textbf{Resultado esperado} & Visualizar todos los espacios publicados en una determinada sección. \\
+\textbf{Resultado no esperado} & Resultado no esperado	No se visualizarán los espacios. \\
+\textbf{Requisitos asociados} & Requisito asociado	RF-01, RNF-01 \\ \hline
+\end{tabular}
+\caption{Formato de la especificación de pruebas.}
+\label{tab:P1}
+\end{center}
+\end{table}
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{ l l }
+\multicolumn{2}{c}{Prueba P-02} \\ \hline
+\textbf{Nombre de la Prueba} & Buscar un espacio \\
+\textbf{Descripción} & Cuando se busque un espacio mediante el buscador del portal, éste deberá aparecer en la web. \\
+\textbf{Resultado esperado} & El espacio buscado. \\
+\textbf{Resultado no esperado} & Resultado no esperado	No se muestra el espacio buscado. \\
+\textbf{Requisitos asociados} & RF-02\\ \hline
+\end{tabular}
+\caption{Formato de la especificación de pruebas.}
+\label{tab:P2}
+\end{center}
+\end{table}
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{ l l }
+\multicolumn{2}{c}{Prueba P-03} \\ \hline
+\textbf{Nombre de la Prueba} & Nombre de la prueba	Crear / Dar de alta un espacio \\
+\textbf{Descripción} & Un usuario comercial debe poder crear un espacio, escogiendo la fecha en la que deberá estar accesible para el resto de usuarios y hasta cuándo. Una vez logueado, deberá poder añadir contenido web con todos los campos necesarios navegando hasta la sección de contenido web y añadiendo un nuevo contenido. \\
+\textbf{Resultado esperado} & El espacio queda creado correctamente con todos los campos especificados. \\
+\textbf{Resultado no esperado} & El espacio no queda creado o queda parcialmente creado. \\
+\textbf{Requisitos asociados} & RF-03, RF-07 \\ \hline
+\end{tabular}
+\caption{Formato de la especificación de pruebas.}
+\label{tab:P3}
+\end{center}
+\end{table}
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{ l l }
+\multicolumn{2}{c}{Prueba P-04} \\ \hline
+\textbf{Nombre de la Prueba} & Un espacio no quedará publicado hasta que un coordinador de área lo revise y lo publique. Para esto, un usuario publicador deberá recibir la petición de publicación, deberá asignarse a sí mismo (u a otro publicador) la tarea y por último deberá publicar el contenido. Además, un publicador podrá decidir si el espacio deja de estar visible, ya sea porque ha sido vendido, alquilado o ha caducado. \\
+\textbf{Descripción} & Un espacio no quedará publicado hasta que un coordinador de área lo revise y lo publique. Para esto, un usuario publicador deberá recibir la petición de publicación, deberá asignarse a sí mismo (u a otro publicador) la tarea y por último deberá publicar el contenido. Además, un publicador podrá decidir si el espacio deja de estar visible, ya sea porque ha sido vendido, alquilado o ha caducado. \\
+\textbf{Resultado esperado} & Hasta que un usuario publicador no publique un contenido, éste no se mostrará y una vez lo publique, quedará mostrado. \\
+\textbf{Resultado no esperado} & Resultado no esperado	El contenido se muestra públicamente sin la aprobación de un publicador o no se publica cuando el publicador lo decide.\\
+\textbf{Requisitos asociados} & RF-05, RF-06, RF-08, RF-10 \\ \hline
+\end{tabular}
+\caption{Formato de la especificación de pruebas.}
+\label{tab:P4}
+\end{center}
+\end{table}
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{ l l }
+\multicolumn{2}{c}{Prueba P-05} \\ \hline
+\textbf{Nombre de la Prueba} & Nombre de la prueba	Borrar un espacio \\
+\textbf{Descripción} & Cuando un usuario comercial o publicador elimine el contenido de un espacio, navegando hasta la sección de contenido web y haciendo clic en eliminar, éste desaparecerá del sistema.  \\
+\textbf{Resultado esperado} & Resultado esperado	El espacio eliminado ya no se muestra más y queda borrado del sistema. \\
+\textbf{Resultado no esperado} & Resultado no esperado	El espacio a eliminar no queda borrado del sistema, pese a que no muestre ningún mensaje de error. \\
+\textbf{Requisitos asociados} & RF-11 \\ \hline
+\end{tabular}
+\caption{Formato de la especificación de pruebas.}
+\label{tab:P5}
+\end{center}
+\end{table}
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{ l l }
+\multicolumn{2}{c}{Prueba P-06} \\ \hline
+\textbf{Nombre de la Prueba} & Modificar un espacio \\
+\textbf{Descripción} &Un usuario comercial o publicador, navegando hasta la sección de contenido web, deberá poder modificar el contenido web de un espacio y que éste se actualice de forma automática en función, quedando a la espera de su validación antes de publicar los cambios. \\
+\textbf{Resultado esperado} & Al modificarse un espacio, éste pasará a esperar su validación y una vez validado se publicará. \\
+\textbf{Resultado no esperado} & Resultado no esperado	El espacio no queda publicado o no queda a la espera de validación y se publica directamente. \\
+\textbf{Requisitos asociados} & RF-12\\ \hline
+\end{tabular}
+\caption{Formato de la especificación de pruebas.}
+\label{tab:P6}
+\end{center}
+\end{table}
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{ l l }
+\multicolumn{2}{c}{Prueba P-07} \\ \hline
+\textbf{Nombre de la Prueba} & Creación de roles \\
+\textbf{Descripción} & El usuario administrador deberá poder crear roles para la página navegando hasta la sección de administración, roles, roles de página y definir sus permisos en la opción definir permisos. \\
+\textbf{Resultado esperado} & El rol creado por el administrador sigue las especificaciones que le ha asignado éste y queda creado. \\
+\textbf{Resultado no esperado} & El rol creado por el administrador sigue las especificaciones que le ha asignado éste y queda creado. \\
+\textbf{Requisitos asociados} & RF-13 \\ \hline
+\end{tabular}
+\caption{Formato de la especificación de pruebas.}
+\label{tab:P7}
+\end{center}
+\end{table}
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{ l l }
+\multicolumn{2}{c}{Prueba P-08} \\ \hline
+\textbf{Nombre de la Prueba} & El usuario administrador deberá poder crear roles para la página navegando hasta la sección de administración, roles, roles de página y definir sus permisos en la opción definir permisos. \\
+\textbf{Descripción} & Accediendo a la página del portal, éste se deberá mostrar un 98\% del tiempo (23.52h al día). \\
+\textbf{Resultado esperado} & Al hacer una petición web al servidor éste deberá mostrar el portal.\\
+\textbf{Resultado no esperado} & Resultado no esperado	Al hacer una petición web al servidor, éste no muestra el portal durante al menos un 98\% del tiempo. \\
+\textbf{Requisitos asociados} & RNF-14 \\ \hline
+\end{tabular}
+\caption{Formato de la especificación de pruebas.}
+\label{tab:P8}
+\end{center}
+\end{table}

@@ -1,0 +1,317 @@
+\chapter{Estimación de tamaño y esfuerzo}
+\par La estimación por puntos de función se basa en una estimación sobre la funcionalidad del software vista externamente, y se fundamente en el diseño lógico del software. Para poder realizarla, lo primero que se ha de hacer es tener claro el alcance y los límites del sistema. Así, es recomendable ver la sección \ref{sec:scope} antes de abordar este apartado.
+
+\par Una vez evaluado el alcance del sistema, se deben definir los parámetros del sistema: los ficheros (tanto internos (ILF) como externos (EIF)) y los procesos (de entrada (EI), de salida (EO) y de consulta (EQ)).
+
+\section{Ficheros}
+\par En el presente proyecto sólo existen ficheros lógicos internos, que se corresponden con los datos lógicamente agrupables e identificables por los usuarios. En concreto, tan sólo existe un ILF, que guarda la información sobre los otros espacios que se encuentran en el sistema en cada momento. Se llamará a este ILF "ILF de otros espacios".
+
+\section{Procesos}
+\par Los procesos identificados en el sistema se dividen en procesos de entrada externa y procesos de consulta. No se han encontrado casos de salidas externas en el proyecto ya que en ningún caso se procesan datos para generar una salida.
+
+\subsection{Entradas externas(EI)}
+\par Se pueden identificar dos tipos de entradas externas: de creación de un nuevo espacio y de modificación de uno ya existente.
+\begin{description}[style=multiline, leftmargin=3cm]
+    \item[Crear nuevo espacio] Dado que existe un ILF de otros espacios, se debe tener la posibilidad de añadir nuevos espacios a ese fichero, por lo que resulta necesario contar con una entrada externa a este respecto.
+    \item[Modificar espacio] Análogamente, se puede observar la necesidad de modificar los valores de un espacio almacenado.
+\end{description}
+
+
+\subsection{Consultas externas(EQ)}
+\par Se pueden identificar dos tipos de consultas externas en el proyecto: la visualización de un espacio concreto y la del listado de espacios en el sistema.
+\begin{description}[style=multiline, leftmargin=3cm]
+    \item[Ver el listado de espacios en alquiler] El sistema muestra un listado con todos los espacios en alquiler contenidos en el mismo. para realizar esta operación no es necesario necesaria la actualización de los datos del ILF ni el procesamiento de los mismos.
+    \item[Ver el listado de espacios en venta] El sistema muestra un listado con todos los espacios en venta contenidos en el mismo. para realizar esta operación no es necesario necesaria la actualización de los datos del ILF ni el procesamiento de los mismos.
+\end{description}
+
+
+\section{Valoración de la complejidad}
+\par Tras el análisis del alcance del sistema y la identificación y parámetros del sistema, se debe realizar una valoración de la complejidad de cada uno de los parámetros identificados (ficheros y procesos).
+
+\subsection{Ficheros lógicos internos}
+\par La complejidad funcional que se asigna a cada ILF es función del número de elementos datos únicos que tiene (DET) y los subgrupos de datos elementales reconocibles por el usuario (RET) de los que estén compuestos.
+
+\par Los atributos del fichero de otros espacios que se tendrán en cuenta para la resolución del proyecto son: nombre del espacio, foto del espacio, tipo de espacio, tamaño del espacio, localización del espacio, régimen (alquiler o venta), estado (publicado o no, vendido o no, alquilado o no), descripción del espacio, otra información relevante y las fechas de inicio y fin de la publicación. Se trata, por tanto de 11 DET divididos en dos subgrupos (2 RET): los obligatorios y los opcionales.
+
+\par Un ILF con 11 DET y 2 RET es considerado de complejidad \textbf{baja}.
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{ l c c c }
+& \textbf{DET} & \textbf{RET} & \textbf{Complejidad} \\
+Otros espacios & 11 & 2 & Baja\\
+\end{tabular}
+\caption{Complejidad de ILF de otros espacios.}
+\label{tab:compILF}
+\end{center}
+\end{table}
+
+\subsection{Entradas externas}
+\par La complejidad funcional asignada a una EI se calcula mediante la identificación de los DET y de los FTR, asignando uno por cada ILF afectado por el EI.
+
+\par En este caso, tanto la creación de un espacio como la modificación del mismo afectan a un sólo ILF (el único que existe), por lo que en ambas EI se identifican 2 FTR.
+
+\par Por otro lado, en ambos casos los DET identificados son el número de atributos del ILF (11) más los de los botones de "aceptar" o "cancelar" la operación, por lo que se identifican 13 DET en cada EI.
+
+\par Una EI con 13 DET y 1 FTR es considerada de complejidad \textbf{baja}.
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{ l c c c }
+& \textbf{DET} & \textbf{FTR} & \textbf{Complejidad} \\
+Crear espacio & 13 & 1 & Baja\\
+Modificar espacio & 13 & 1 & Baja\\
+\end{tabular}
+\caption{Complejidad de EI.}
+\label{tab:compEI}
+\end{center}
+\end{table}
+
+\subsection{Consultas externas}
+\par Para el cálculo de la complejidad de una EQ se deben calcular por separado las entradas y las salidas de dicha consulta, asignando el DET y el FTR más alto en cada caso para el cálculo de la complejidad.
+
+\par A continuación se analiza cada una de las EQ antes identificadas:
+\begin{description}[style=multiline, leftmargin=3cm]
+    \item[Ver el listado de espacios en alquiler] El sistema muestra información detallada sobre cada uno de los activos. Se muestran toda la información de los espacios a excepción de las fechas de inicio y fin de publicación. En total, 9 DET de salida. También podemos identificar un DET de entrada para mostrar el listado de espacios en venta.
+    \item[Ver el listado de espacios en venta] El sistema muestra información detallada sobre cada uno de los activos. Se muestran toda la información de los espacios a excepción de las fechas de inicio y fin de publicación. En total, 9 DET de salida. También podemos identificar un DET de entrada para mostrar el listado de espacios en alquiler.
+\end{description}
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{ l c c c c c }
+& \textbf{DETe} & \textbf{FTRe} & \textbf{DETs} & \textbf{FTRs} & \textbf{Complejidad} \\
+Ver espacios alquiler & 1 & 1 & 9 & 1 Baja\\
+Ver espacios venta & 1 & 1 & 9 & 1 Baja\\
+\end{tabular}
+\caption{Complejidad de EQ.}
+\label{tab:compEQ}
+\end{center}
+\end{table}
+
+
+\section{Puntos de función sin ajustar}
+\par Tomando como base las complejidades calculadas en los apartados anteriores, (véanse tablas \ref{tab:compILF}, \ref{tab:compEI}, \ref{tab:compEQ}) se pueden calcular los puntos de función si ajustar. Puede verse este cálculo en la tabla \ref{tab:ptoFuncSA}.
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{ l c c c c }
+& \textbf{Complejidad} & \textbf{Peso} & \textbf{Numero} & \textbf{Total} & \textbf{Complejidad} \\
+ILF & Baja & 7 & 1 & 7 \\
+EI & Baja & 3 & 2 & 6 \\
+EQ & Baja & 3 & 2 & 6 \\ \hline
+\textbf{TOTAL} & & & & 19 \\ \hline
+\end{tabular}
+\caption{Puntos de función sin ajustar.}
+\label{tab:ptoFuncSA}
+\end{center}
+\end{table}
+
+\section{COCOMO II}
+\subsection{Cálculo del tamaño}
+\par El tamaño se obtiene al multiplicar el número de puntos de función y el lenguaje de desarrollo escogido es HTML que tiene un $loc=15$. Se ha escogido HTML porque hay que realizar diseño en un lenguaje muy similar de marcado.
+$$ tamaño = (19pf * 15loc/pf)/1000 = 2.85KDSI $$
+
+
+\subsection{Cálculo del factor de escala}
+\par Para calcular el factor de escala (B) se tienen en cuenta los drivers de escala de COCOMO II que son los precedentes (\label{tab:precedentes}), flexibilidad en el desarrollo (\label{tab:flexibilidad}), resolución de riesgos (\label{tab:riesgos}), madurez del proceso (\label{tab:madurez}) y cohesión del equipo (\label{tab:cohesion}).
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{ l l }
+\textbf{Necesidad} & \textbf{Valor} \\
+Conocimiento de la organización de los objetivos del proyecto. & Nominal \\
+Experiencia en sistemas software afines & Muy bajo \\
+Desarrollo concurrente de nuevo hardware y procedimientos operacionales & Alto \\
+Necesidad de innovación en el procesamiento de datos, algoritmos, etc … & Alto \\
+\textbf{TOTAL} & \textbf{Nominal} \\
+\end{tabular}
+\caption{Precedentes.}
+\label{tab:precedentes}
+\end{center}
+\end{table}
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{ l l }
+\textbf{Necesidad} & \textbf{Valor} \\
+Necesidad de ajuste del software a los requisitos &
+Nominal\\
+Necesidad de ajuste del software a los interfaces &
+Muy bajo\\
+Prima por finalización temprana &
+Extra bajo\\
+\textbf{TOTAL} & \textbf{Bajo} \\
+\end{tabular}
+\caption{Flexibilidad del desarrollo.}
+\label{tab:flexibilidad}
+\end{center}
+\end{table}
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{ l l }
+\textbf{Necesidad} & \textbf{Valor} \\
+PGR  &
+Nominal \\
+Planificación compatible con PGR  &
+Nominal \\
+Porcentaje de planificación dedicado a definir la arquitectura &
+Muy bajo \\
+Porcentaje de arquitectos software disponible en el proyecto &
+Nominal \\
+Soporte de herramientas disponibles para el análisis de riesgo y especificación de arquitectura &
+Nominal \\
+Nivel de incertidumbre hardware, tecnología y rendimiento &
+Bajo \\
+Número de riesgos críticos &
+Bajo \\
+\textbf{TOTAL} & \textbf{Nominal} \\
+\end{tabular}
+\caption{Resolución de riesgos.}
+\label{tab:riesgos}
+\end{center}
+\end{table}
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{ l l }
+\textbf{Necesidad} & \textbf{Valor} \\
+Madurez del proceso&
+Extra alto\\
+Planificación compatible con PGR &
+Extra alto\\
+\textbf{TOTAL} & \textbf{Extra alto} \\
+\end{tabular}
+\caption{Madurez del proyecto.}
+\label{tab:madurez}
+\end{center}
+\end{table}
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{ l l }
+\textbf{Necesidad} & \textbf{Valor} \\
+Consistencia en objetivos, culturas &
+Extra alto\\
+Capacidad de acomodarse a objetivos de los distintos miembros &
+Nominal\\
+Experiencia en trabajo en equipo &
+Extra alto\\
+Constitución de equipos para visiones comunes &
+Nominal\\
+\textbf{TOTAL} & \textbf{Muy alto} \\
+\end{tabular}
+\caption{Cohesión del equipo.}
+\label{tab:choseion}
+\end{center}
+\end{table}
+
+\par Para el cálculo de $B$ utilizaremos la ecuación \ref{eqn:B} y los valores obtenidos en los factores de los drivers.
+\begin{equation} \label{eqn:B}B = 0.91 + 0.01 *\sum w_{i}\end{equation}
+
+$$\sum w_{i}=2.43+4.86+5.53+0+0.99=13.81$$
+$$B = 0.91 + 0.01*13.81=1.048$$
+
+\par Aplicando la ecuación \ref{eqn:nominal}, tenemos que $MM_{nominal}=1*2.85^{1,048}=2.99meses/persona$, por lo que, entre 3 personas, cada una requerirá  mes de trabajo (sin ajustar).
+
+\begin{equation} \label{eqn:nominal}MM_{nominal}=A*(Tamaño)^B\end{equation}
+
+
+
+\subsection{Ajuste del esfuerzo nominal}
+Para calcular el esfuerzo nominal se utilizan los drivers de esfuerzo que proporciona COCOMOII. Como nos encontramos en una fase avanzada del proyecto utilizamos los drivers de  post-arquitectura. Estos drivers son de software (\label{tab:software}), de hardware (\label{tab:hardware}), de personal (\label{tab:personal}) y de proyecto (\label{tab:proyecto}).
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{ l l l }
+\textbf{Necesidad} & \textbf{Valor} & \textbf{Ponderación} \\
+Fiabilidad (RELY) &
+Muy bajo &
+0,82 \\
+Tamaño BDD (DATA) &
+Bajo &
+0,90 \\
+Complejidad (CPLX) &
+Muy bajo &
+0,73 \\
+Reutilización Requerida (RUSE) &
+Bajo &
+0,95 \\
+\end{tabular}
+\caption{MDrivers de software.}
+\label{tab:software}
+\end{center}
+\end{table}
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{ l l l }
+\textbf{Necesidad} & \textbf{Valor} & \textbf{Ponderación} \\
+Restricción tiempo de ejecución (TIME) &
+Nominal &
+1 \\
+Restricción de almacenamiento principal (STOR) &
+Nominal &
+1 \\
+Volatilidad de la plataforma (PVOL) &
+Bajo &
+0,87 \\
+\end{tabular}
+\caption{Drivers de hardware.}
+\label{tab:hardware}
+\end{center}
+\end{table}
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{ l l l }
+\textbf{Necesidad} & \textbf{Valor} & \textbf{Ponderación} \\
+Capacidad del analista (ACAP) &
+Nominal &
+1 \\
+Capacidad del programador (PCAP) &
+Nominal &
+1 \\
+Experiencia aplicaciones (AEXP) &
+Bajo &
+1,10 \\
+Experiencia plataforma (PEXP) &
+Bajo &
+1,09 \\
+Experiencia del lenguaje (LTEX) &
+Nominal &
+1 \\
+Continuidad del personal (PCON) &
+Muy alto &
+0,81 \\
+\end{tabular}
+\caption{Drivers de personal.}
+\label{tab:personal}
+\end{center}
+\end{table}
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{ l l l }
+\textbf{Necesidad} & \textbf{Valor} & \textbf{Ponderación} \\
+Uso de herramientas software (TOOL) &
+Nominal &
+1 \\
+Desarrollo multi-lugar (SITE) &
+Nominal &
+1 \\
+Planificación requerida (SCED) &
+Alto &
+1 \\
+Documentación requerida (DOCU) &
+Alto &
+1,11 \\
+\end{tabular}
+\caption{Drivers del proyecto.}
+\label{tab:proyecto}
+\end{center}
+\end{table}
+
+\par Aplicando los resultados a la ecuación \ref{eqn:ajustado}, obtenemos que $}MM_{ajustado} = 2.99 * 0.48 =  1.44$.
+
+\begin{equation} \label{eqn:ajustado}MM_{ajustado} = MM_{nominal}*(\prod_{i=0}^{17}EM_{i})\end{equation}

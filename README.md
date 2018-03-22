@@ -13,8 +13,8 @@ Documentos contenidos:
 ----------------------
 
 + Proyecto completo: compilar "RSPlusAgency.tex" con pdflatex y bibtex
-+ Entrega 1: compilar "E1_RSPA.tex" con pdftex y bibtex
-+ Entrega 2: compilar "RSPlusAgency.tex" con pdftex y bibtex (E2 == Proyecto completo)
++ Entrega 1: compilar "E1_RSPA.tex" con pdflatex y bibtex
++ Entrega 2: compilar "RSPlusAgency.tex" con pdflatex y bibtex (E2 == Proyecto completo)
 
 Comandos básicos:
 ----------------

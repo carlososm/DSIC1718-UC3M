@@ -12,7 +12,7 @@ Para poder compilar el proyecto, es necesario tener en cuenta o siguiente:
 Documentos contenidos:
 ----------------------
 
-+ Proyecto completo: compilar "RSPlusAgency.tex" con pdftex y bibtex
++ Proyecto completo: compilar "RSPlusAgency.tex" con pdflatex y bibtex
 + Entrega 1: compilar "E1_RSPA.tex" con pdftex y bibtex
 + Entrega 2: compilar "RSPlusAgency.tex" con pdftex y bibtex (E2 == Proyecto completo)
 
